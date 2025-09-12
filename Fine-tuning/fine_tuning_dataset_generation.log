@@ -1,0 +1,528 @@
+2024-08-19 04:24:39,811 - INFO - 
+Processing policy: 31.json
+2024-08-19 04:24:44,039 - INFO - Generating strings
+2024-08-19 04:24:47,306 - INFO - Running analysis to get regex_from_dfa
+2024-08-19 04:24:47,306 - WARNING - Failed to extract regex_from_dfa for policy: 31.json
+2024-08-19 04:24:47,306 - INFO - 
+Processing policy: 9.json
+2024-08-19 04:24:48,086 - INFO - Generating strings
+2024-08-19 04:24:48,214 - INFO - Running analysis to get regex_from_dfa
+2024-08-19 04:24:48,215 - WARNING - Failed to extract regex_from_dfa for policy: 9.json
+2024-08-19 04:24:48,215 - INFO - 
+Processing policy: 16.json
+2024-08-19 04:24:48,966 - INFO - Generating strings
+2024-08-19 04:24:49,076 - INFO - Running analysis to get regex_from_dfa
+2024-08-19 04:24:49,076 - WARNING - Failed to extract regex_from_dfa for policy: 16.json
+2024-08-19 04:24:49,077 - INFO - 
+Processing policy: 37.json
+2024-08-19 04:24:49,233 - INFO - Generating strings
+2024-08-19 04:24:49,390 - INFO - Running analysis to get regex_from_dfa
+2024-08-19 04:24:49,390 - WARNING - Failed to extract regex_from_dfa for policy: 37.json
+2024-08-19 04:24:49,390 - INFO - 
+Processing policy: 28.json
+2024-08-19 04:24:53,397 - INFO - Generating strings
+2024-08-19 04:24:56,687 - INFO - Running analysis to get regex_from_dfa
+2024-08-19 04:24:56,687 - WARNING - Failed to extract regex_from_dfa for policy: 28.json
+2024-08-19 04:24:56,688 - INFO - 
+Processing policy: 11.json
+2024-08-19 04:24:57,745 - INFO - Generating strings
+2024-08-19 04:24:58,157 - INFO - Running analysis to get regex_from_dfa
+2024-08-19 04:24:58,157 - WARNING - Failed to extract regex_from_dfa for policy: 11.json
+2024-08-19 04:24:58,157 - INFO - 
+Processing policy: 6.json
+2024-08-19 04:25:00,097 - INFO - Generating strings
+2024-08-19 04:25:01,165 - INFO - Running analysis to get regex_from_dfa
+2024-08-19 04:25:01,165 - WARNING - Failed to extract regex_from_dfa for policy: 6.json
+2024-08-19 04:25:01,165 - INFO - 
+Processing policy: 40.json
+2024-08-19 04:32:23,819 - INFO - 
+Processing policy: 31.json
+2024-08-19 04:32:28,045 - INFO - Generating strings
+2024-08-19 04:32:31,155 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:32:31,160 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:32:38,568 - INFO - Running Quacky analysis
+2024-08-19 04:32:38,569 - INFO - 
+Processing policy: 9.json
+2024-08-19 04:32:39,343 - INFO - Generating strings
+2024-08-19 04:32:43,677 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:32:43,678 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:32:44,372 - INFO - Running Quacky analysis
+2024-08-19 04:32:44,372 - INFO - 
+Processing policy: 16.json
+2024-08-19 04:32:45,135 - INFO - Generating strings
+2024-08-19 04:32:49,348 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:32:49,350 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:32:49,567 - INFO - Running Quacky analysis
+2024-08-19 04:32:49,567 - ERROR - Errors: Traceback (most recent call last):
+  File "/home/adarsh/Documents/quacky/src/quacky.py", line 219, in <module>
+    call_abc(args)
+  File "/home/adarsh/Documents/quacky/src/quacky.py", line 81, in call_abc
+    raise Exception(error)
+Exception: FATAL ERROR FROM ABC
+Stacktrace:
+I20240819 04:32:49.463878 138241971035712 main.cpp:257] report is_sat: sat time: 4.35004 ms
+I20240819 04:32:49.466120 138241971035712 main.cpp:268] report (TUPLE) bound: 100 count: 44811825086395006662320983108000707232626364521145181663012574681618475565711513435357273524215874813446512110134560744530862530593671524313396516025480924628922008084774587950034963916136003447754844419391370914320117203287093355301843391087394275665753715658611191050571514735439495867186411649429443859102974239069817673588923113844620284548279849294046666533987820435291616714854147455005491356495071704200298229757990037142563268699877027402628844080143334681463640670947443201 time: 2.18155 ms
+F20240819 04:32:49.466561 138241971035712 RegularExpression.cpp:742] expected ']' at position: 73
+    @     0x7dbaf718a45f  google::LogMessage::Fail()
+    @     0x7dbaf718e040  google::LogMessageFatal::~LogMessageFatal()
+    @     0x7dbaf77efaa9  Vlab::Util::RegularExpression::parseCharClassExp()
+    @     0x7dbaf77ef8d6  Vlab::Util::RegularExpression::parseComplExp() [clone .localalias]
+    @     0x7dbaf77ef2a9  Vlab::Util::RegularExpression::parseRepeatExp()
+    @     0x7dbaf77ef064  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x7dbaf77ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x7dbaf77ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x7dbaf77eefc4  Vlab::Util::RegularExpression::parseInterExp() [clone .localalias]
+    @     0x7dbaf77eef66  Vlab::Util::RegularExpression::parseUnionExp() [clone .localalias]
+    @     0x7dbaf77efe6c  Vlab::Util::RegularExpression::parseSimpleExp()
+    @     0x7dbaf77efac1  Vlab::Util::RegularExpression::parseCharClassExp()
+    @     0x7dbaf77ef8d6  Vlab::Util::RegularExpression::parseComplExp() [clone .localalias]
+    @     0x7dbaf77ef2a9  Vlab::Util::RegularExpression::parseRepeatExp()
+    @     0x7dbaf77ef064  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x7dbaf77ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x7dbaf77eefc4  Vlab::Util::RegularExpression::parseInterExp() [clone .localalias]
+    @     0x7dbaf77eef66  Vlab::Util::RegularExpression::parseUnionExp() [clone .localalias]
+    @     0x7dbaf77f18c2  Vlab::Util::RegularExpression::parse()
+    @     0x7dbaf77ebb48  Vlab::Util::RegularExpression::RegularExpression(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+    @     0x7dbaf7798e6a  Vlab::Theory::StringAutomaton::MakeRegexAuto(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int)
+    @     0x7dbaf7586163  Vlab::Driver::MeasureDistance(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int)
+    @     0x60daa5226f23  main
+    @     0x7dbaf6a29d90  (/usr/lib/x86_64-linux-gnu/libc.so.6+0x29d8f)
+    @     0x7dbaf6a29e40  __libc_start_main
+    @     0x60daa5222145  _start
+Regex: 
+^(?:[|}~-]{1,3}[\w\s!@#$%^&*()+=<>?/:;"'{[\],.`-]{1,30}[|}~-]{1,3}){1,5}$
+
+
+2024-08-19 04:32:49,567 - WARNING - Failed to extract regex_from_dfa for policy: 16.json
+2024-08-19 04:32:49,567 - INFO - 
+Processing policy: 37.json
+2024-08-19 04:32:49,721 - INFO - Generating strings
+2024-08-19 04:32:54,772 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:32:54,773 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:32:54,973 - INFO - Running Quacky analysis
+2024-08-19 04:32:54,973 - INFO - 
+Processing policy: 28.json
+2024-08-19 04:32:58,947 - INFO - Generating strings
+2024-08-19 04:33:01,683 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:33:01,684 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:33:08,317 - INFO - Running Quacky analysis
+2024-08-19 04:33:08,317 - ERROR - Errors: Traceback (most recent call last):
+  File "/home/adarsh/Documents/quacky/src/quacky.py", line 219, in <module>
+    call_abc(args)
+  File "/home/adarsh/Documents/quacky/src/quacky.py", line 81, in call_abc
+    raise Exception(error)
+Exception: FATAL ERROR FROM ABC
+Stacktrace:
+I20240819 04:33:05.079079 130748524416576 main.cpp:257] report is_sat: sat time: 121.019 ms
+I20240819 04:33:08.128655 130748524416576 main.cpp:268] report (TUPLE) bound: 100 count: 17880063311394750683873544510385248306436776170711616184790604792237740315901362867522001655599457871568673388238249136398763593118456046459134918641265416488879931031111420219477847148531279313009592604921371659738218605547389188390251900339665956730188075191174940456191874342972288096650235159104004356907214484365286863808083075886204999300742555344121695112337661670452512485586503150443748915577160622126585198303093781673056832180535763420013295039230718889349772247169957822238792505914610207052308562328097180004386374580723234473603304327261681020101140112816150732992788433945835520946121741539997639235701174856348933488617204619459472321348973626540419016773154505451016712276165268620194698322002116095 time: 3049.51 ms
+F20240819 04:33:08.191858 130748524416576 RegularExpression.cpp:742] expected ']' at position: 50
+    @     0x76ea435fd45f  google::LogMessage::Fail()
+    @     0x76ea43601040  google::LogMessageFatal::~LogMessageFatal()
+    @     0x76ea433efaa9  Vlab::Util::RegularExpression::parseCharClassExp()
+    @     0x76ea433ef8d6  Vlab::Util::RegularExpression::parseComplExp() [clone .localalias]
+    @     0x76ea433ef2a9  Vlab::Util::RegularExpression::parseRepeatExp()
+    @     0x76ea433ef064  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x76ea433ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x76ea433ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x76ea433eefc4  Vlab::Util::RegularExpression::parseInterExp() [clone .localalias]
+    @     0x76ea433eef66  Vlab::Util::RegularExpression::parseUnionExp() [clone .localalias]
+    @     0x76ea433efe6c  Vlab::Util::RegularExpression::parseSimpleExp()
+    @     0x76ea433efac1  Vlab::Util::RegularExpression::parseCharClassExp()
+    @     0x76ea433ef8d6  Vlab::Util::RegularExpression::parseComplExp() [clone .localalias]
+    @     0x76ea433ef2a9  Vlab::Util::RegularExpression::parseRepeatExp()
+    @     0x76ea433ef064  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x76ea433ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x76ea433eefc4  Vlab::Util::RegularExpression::parseInterExp() [clone .localalias]
+    @     0x76ea433eef66  Vlab::Util::RegularExpression::parseUnionExp() [clone .localalias]
+    @     0x76ea433f18c2  Vlab::Util::RegularExpression::parse()
+    @     0x76ea433ebb48  Vlab::Util::RegularExpression::RegularExpression(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+    @     0x76ea43398e6a  Vlab::Theory::StringAutomaton::MakeRegexAuto(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int)
+    @     0x76ea43186163  Vlab::Driver::MeasureDistance(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int)
+    @     0x5ebda857ff23  main
+    @     0x76ea42629d90  (/usr/lib/x86_64-linux-gnu/libc.so.6+0x29d8f)
+    @     0x76ea42629e40  __libc_start_main
+    @     0x5ebda857b145  _start
+Regex: 
+^(?:[a-zA-Z0-9$%'"*+,./:;<=>?@[\\\]^_`{|}~-]|\s)*$
+
+
+2024-08-19 04:33:08,317 - WARNING - Failed to extract regex_from_dfa for policy: 28.json
+2024-08-19 04:33:08,317 - INFO - 
+Processing policy: 11.json
+2024-08-19 04:33:09,384 - INFO - Generating strings
+2024-08-19 04:33:16,850 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:33:16,852 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:35:34,322 - INFO - Running Quacky analysis
+2024-08-19 04:35:34,323 - INFO - 
+Processing policy: 6.json
+2024-08-19 04:35:36,260 - INFO - Generating strings
+2024-08-19 04:35:40,891 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:35:40,893 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:35:43,579 - INFO - Running Quacky analysis
+2024-08-19 04:35:43,579 - INFO - 
+Processing policy: 40.json
+2024-08-19 04:39:02,724 - INFO - 
+Processing policy: 0.json
+2024-08-19 04:39:10,666 - INFO - Generating strings
+2024-08-19 04:39:16,357 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:39:16,362 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:39:31,054 - INFO - Running Quacky analysis
+2024-08-19 04:39:31,055 - INFO - Successfully processed policy: 0.json
+2024-08-19 04:39:31,055 - INFO - 
+Processing policy: 1.json
+2024-08-19 04:39:34,419 - INFO - Generating strings
+2024-08-19 04:39:41,248 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:39:41,249 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:39:47,067 - INFO - Running Quacky analysis
+2024-08-19 04:39:47,067 - INFO - Successfully processed policy: 1.json
+2024-08-19 04:39:47,067 - INFO - 
+Processing policy: 2.json
+2024-08-19 04:39:48,642 - INFO - Generating strings
+2024-08-19 04:39:53,514 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:39:53,514 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:39:55,335 - INFO - Running Quacky analysis
+2024-08-19 04:39:55,335 - ERROR - Errors: Traceback (most recent call last):
+  File "/home/adarsh/Documents/quacky/src/quacky.py", line 219, in <module>
+    call_abc(args)
+  File "/home/adarsh/Documents/quacky/src/quacky.py", line 81, in call_abc
+    raise Exception(error)
+Exception: FATAL ERROR FROM ABC
+Stacktrace:
+I20240819 04:39:54.752360 133676326391360 main.cpp:257] report is_sat: sat time: 396.238 ms
+I20240819 04:39:55.084494 133676326391360 main.cpp:268] report (TUPLE) bound: 100 count: 672177376295925099934814746620010608489395467817177724945188620224277133485672701530359102863238122201697681652018411167962937958905072864700947740382213869433830121271618819250524458742040051716322666290870563714801758049306400329527650866310914134986305734879167865758741705475927670461801344110541869706262999404340313889155454225935731930216361214292092767677213402970360307510536964607455135794459431332599544264413694509777010568983975874366437012200535791594058274057229377553 time: 332.041 ms
+F20240819 04:39:55.212965 133676326391360 RegularExpression.cpp:793] expected ')' at position: 93
+    @     0x7993f1f8945f  google::LogMessage::Fail()
+    @     0x7993f1f8d040  google::LogMessageFatal::~LogMessageFatal()
+    @     0x7993f1defef8  Vlab::Util::RegularExpression::parseSimpleExp()
+    @     0x7993f1defac1  Vlab::Util::RegularExpression::parseCharClassExp()
+    @     0x7993f1def8d6  Vlab::Util::RegularExpression::parseComplExp() [clone .localalias]
+    @     0x7993f1def2a9  Vlab::Util::RegularExpression::parseRepeatExp()
+    @     0x7993f1def064  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x7993f1def1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x7993f1def1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x7993f1deefc4  Vlab::Util::RegularExpression::parseInterExp() [clone .localalias]
+    @     0x7993f1deef66  Vlab::Util::RegularExpression::parseUnionExp() [clone .localalias]
+    @     0x7993f1df18c2  Vlab::Util::RegularExpression::parse()
+    @     0x7993f1debb48  Vlab::Util::RegularExpression::RegularExpression(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+    @     0x7993f1d98e6a  Vlab::Theory::StringAutomaton::MakeRegexAuto(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int)
+    @     0x7993f1b86163  Vlab::Driver::MeasureDistance(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int)
+    @     0x6021ce11ff23  main
+    @     0x7993f1029d90  (/usr/lib/x86_64-linux-gnu/libc.so.6+0x29d8f)
+    @     0x7993f1029e40  __libc_start_main
+    @     0x6021ce11b145  _start
+Regex: 
+^(?:[A-Z]|\+|;|[a-z]|[0-9]|[`'"#$%&()*+,\-./:;<=>?@[\]^_{|}~]){1,2}(?:[^~]*~){1,10}(?:[^~]+)$
+
+
+2024-08-19 04:39:55,335 - WARNING - Failed to extract regex_from_dfa for policy: 2.json. Skipping this entry.
+2024-08-19 04:39:55,336 - INFO - 
+Processing policy: 3.json
+2024-08-19 04:39:57,586 - INFO - Generating strings
+2024-08-19 04:40:03,648 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:40:03,649 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:40:05,375 - INFO - Running Quacky analysis
+2024-08-19 04:40:05,376 - INFO - Successfully processed policy: 3.json
+2024-08-19 04:40:05,376 - INFO - 
+Processing policy: 4.json
+2024-08-19 04:40:06,799 - INFO - Generating strings
+2024-08-19 04:40:10,205 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:40:10,206 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:40:11,668 - INFO - Running Quacky analysis
+2024-08-19 04:40:11,668 - INFO - Successfully processed policy: 4.json
+2024-08-19 04:40:11,668 - INFO - 
+Processing policy: 5.json
+2024-08-19 04:40:12,556 - INFO - Generating strings
+2024-08-19 04:40:16,669 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:40:16,671 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:40:17,072 - INFO - Running Quacky analysis
+2024-08-19 04:40:17,072 - INFO - Successfully processed policy: 5.json
+2024-08-19 04:40:17,073 - INFO - 
+Processing policy: 6.json
+2024-08-19 04:40:19,010 - INFO - Generating strings
+2024-08-19 04:40:25,562 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:40:25,563 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:40:28,332 - INFO - Running Quacky analysis
+2024-08-19 04:40:28,332 - INFO - Successfully processed policy: 6.json
+2024-08-19 04:40:28,333 - INFO - 
+Processing policy: 7.json
+2024-08-19 04:40:30,257 - INFO - Generating strings
+2024-08-19 04:40:38,484 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:40:38,485 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:40:40,934 - INFO - Running Quacky analysis
+2024-08-19 04:40:40,934 - INFO - Successfully processed policy: 7.json
+2024-08-19 04:40:40,934 - INFO - 
+Processing policy: 8.json
+2024-08-19 04:40:42,485 - INFO - Generating strings
+2024-08-19 04:40:48,249 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:40:48,250 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:40:49,466 - INFO - Running Quacky analysis
+2024-08-19 04:40:49,467 - INFO - Successfully processed policy: 8.json
+2024-08-19 04:40:49,467 - INFO - 
+Processing policy: 9.json
+2024-08-19 04:40:50,246 - INFO - Generating strings
+2024-08-19 04:40:54,795 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:40:54,797 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:40:56,098 - INFO - Running Quacky analysis
+2024-08-19 04:40:56,098 - INFO - Successfully processed policy: 9.json
+2024-08-19 04:40:56,098 - INFO - 
+Processing policy: 10.json
+2024-08-19 04:40:57,165 - INFO - Generating strings
+2024-08-19 04:41:00,682 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:41:00,683 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:41:07,006 - INFO - Running Quacky analysis
+2024-08-19 04:41:07,006 - INFO - Successfully processed policy: 10.json
+2024-08-19 04:41:07,007 - INFO - 
+Processing policy: 11.json
+2024-08-19 04:41:08,079 - INFO - Generating strings
+2024-08-19 04:41:12,250 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:41:12,251 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:41:13,017 - INFO - Running Quacky analysis
+2024-08-19 04:41:13,017 - INFO - Successfully processed policy: 11.json
+2024-08-19 04:41:13,018 - INFO - 
+Processing policy: 12.json
+2024-08-19 04:41:13,832 - INFO - Generating strings
+2024-08-19 04:41:16,589 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:41:16,591 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:41:16,817 - INFO - Running Quacky analysis
+2024-08-19 04:41:16,818 - INFO - Successfully processed policy: 12.json
+2024-08-19 04:41:16,818 - INFO - 
+Processing policy: 13.json
+2024-08-19 04:41:19,500 - INFO - Generating strings
+2024-08-19 04:41:27,215 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:41:27,215 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:41:29,710 - INFO - Running Quacky analysis
+2024-08-19 04:41:29,710 - INFO - Successfully processed policy: 13.json
+2024-08-19 04:41:29,710 - INFO - 
+Processing policy: 14.json
+2024-08-19 04:41:31,398 - INFO - Generating strings
+2024-08-19 04:41:36,563 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:41:36,564 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:41:38,495 - INFO - Running Quacky analysis
+2024-08-19 04:41:38,495 - INFO - Successfully processed policy: 14.json
+2024-08-19 04:41:38,495 - INFO - 
+Processing policy: 15.json
+2024-08-19 04:41:39,416 - INFO - Generating strings
+2024-08-19 04:41:44,883 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:41:44,884 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:41:45,384 - INFO - Running Quacky analysis
+2024-08-19 04:41:45,384 - INFO - Successfully processed policy: 15.json
+2024-08-19 04:41:45,384 - INFO - 
+Processing policy: 16.json
+2024-08-19 04:41:46,145 - INFO - Generating strings
+2024-08-19 04:41:49,322 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:41:49,324 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:41:54,325 - INFO - Running Quacky analysis
+2024-08-19 04:41:54,325 - INFO - Successfully processed policy: 16.json
+2024-08-19 04:41:54,326 - INFO - 
+Processing policy: 17.json
+2024-08-19 04:41:54,995 - INFO - Generating strings
+2024-08-19 04:41:57,666 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:41:57,667 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:41:57,904 - INFO - Running Quacky analysis
+2024-08-19 04:41:57,904 - INFO - Successfully processed policy: 17.json
+2024-08-19 04:41:57,905 - INFO - 
+Processing policy: 18.json
+2024-08-19 04:41:59,210 - INFO - Generating strings
+2024-08-19 04:42:01,713 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:42:01,714 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:42:02,519 - INFO - Running Quacky analysis
+2024-08-19 04:42:02,519 - INFO - Successfully processed policy: 18.json
+2024-08-19 04:42:02,519 - INFO - 
+Processing policy: 19.json
+2024-08-19 04:42:03,440 - INFO - Generating strings
+2024-08-19 04:42:06,975 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:42:06,976 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:42:11,469 - INFO - Running Quacky analysis
+2024-08-19 04:42:11,469 - INFO - Successfully processed policy: 19.json
+2024-08-19 04:42:11,469 - INFO - 
+Processing policy: 20.json
+2024-08-19 04:42:12,269 - INFO - Generating strings
+2024-08-19 04:42:17,849 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:42:17,850 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:42:18,197 - INFO - Running Quacky analysis
+2024-08-19 04:42:18,197 - ERROR - Errors: Traceback (most recent call last):
+  File "/home/adarsh/Documents/quacky/src/quacky.py", line 219, in <module>
+    call_abc(args)
+  File "/home/adarsh/Documents/quacky/src/quacky.py", line 81, in call_abc
+    raise Exception(error)
+Exception: FATAL ERROR FROM ABC
+Stacktrace:
+I20240819 04:42:18.050387 128693447163456 main.cpp:257] report is_sat: sat time: 43.1877 ms
+I20240819 04:42:18.060283 128693447163456 main.cpp:268] report (TUPLE) bound: 100 count: 330047742842250886728846424023851528211887810008096089009563067321925275218014771132997520080877002902723334941416022951712198682838913934019678091368505146096384393624672924457218525154911476039403096915707400 time: 9.83187 ms
+F20240819 04:42:18.073345 128693447163456 RegularExpression.cpp:742] expected ']' at position: 62
+    @     0x750bc6b8a45f  google::LogMessage::Fail()
+    @     0x750bc6b8e040  google::LogMessageFatal::~LogMessageFatal()
+    @     0x750bc71efaa9  Vlab::Util::RegularExpression::parseCharClassExp()
+    @     0x750bc71ef8d6  Vlab::Util::RegularExpression::parseComplExp() [clone .localalias]
+    @     0x750bc71ef2a9  Vlab::Util::RegularExpression::parseRepeatExp()
+    @     0x750bc71ef064  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x750bc71ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x750bc71ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x750bc71ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x750bc71ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x750bc71ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x750bc71ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x750bc71ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x750bc71ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x750bc71ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x750bc71ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x750bc71ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x750bc71ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x750bc71ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x750bc71ef1c8  Vlab::Util::RegularExpression::parseConcatExp() [clone .localalias]
+    @     0x750bc71eefc4  Vlab::Util::RegularExpression::parseInterExp() [clone .localalias]
+    @     0x750bc71eef66  Vlab::Util::RegularExpression::parseUnionExp() [clone .localalias]
+    @     0x750bc71f18c2  Vlab::Util::RegularExpression::parse()
+    @     0x750bc71ebb48  Vlab::Util::RegularExpression::RegularExpression(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+    @     0x750bc7198e6a  Vlab::Theory::StringAutomaton::MakeRegexAuto(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int)
+    @     0x750bc6f86163  Vlab::Driver::MeasureDistance(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int)
+    @     0x5dce80db7f23  main
+    @     0x750bc6429d90  (/usr/lib/x86_64-linux-gnu/libc.so.6+0x29d8f)
+    @     0x750bc6429e40  __libc_start_main
+    @     0x5dce80db3145  _start
+Regex: 
+^arn:aws:s3:::[\w~`'"!@#$%^&*()+=<>?/|\\{},.\[\]:; -]{1,1000}$
+
+
+2024-08-19 04:42:18,197 - WARNING - Failed to extract regex_from_dfa for policy: 20.json. Skipping this entry.
+2024-08-19 04:42:18,197 - INFO - 
+Processing policy: 21.json
+2024-08-19 04:42:19,185 - INFO - Generating strings
+2024-08-19 04:42:22,427 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:42:22,428 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:44:16,892 - INFO - Running Quacky analysis
+2024-08-19 04:44:16,892 - INFO - Successfully processed policy: 21.json
+2024-08-19 04:44:16,893 - INFO - 
+Processing policy: 22.json
+2024-08-19 04:44:17,721 - INFO - Generating strings
+2024-08-19 04:44:20,407 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:44:20,408 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:44:20,669 - INFO - Running Quacky analysis
+2024-08-19 04:44:20,669 - INFO - Successfully processed policy: 22.json
+2024-08-19 04:44:20,669 - INFO - 
+Processing policy: 23.json
+2024-08-19 04:45:01,901 - INFO - Generating strings
+2024-08-19 04:45:05,575 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:45:05,576 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:48:31,777 - INFO - Running Quacky analysis
+2024-08-19 04:48:31,778 - INFO - Successfully processed policy: 23.json
+2024-08-19 04:48:31,778 - INFO - 
+Processing policy: 24.json
+2024-08-19 04:48:32,715 - INFO - Generating strings
+2024-08-19 04:48:35,271 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:48:35,273 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:48:35,591 - INFO - Running Quacky analysis
+2024-08-19 04:48:35,592 - INFO - Successfully processed policy: 24.json
+2024-08-19 04:48:35,592 - INFO - 
+Processing policy: 25.json
+2024-08-19 04:49:02,473 - INFO - Generating strings
+2024-08-19 04:49:05,171 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:49:05,172 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:52:59,916 - INFO - Running Quacky analysis
+2024-08-19 04:52:59,916 - INFO - Successfully processed policy: 25.json
+2024-08-19 04:52:59,916 - INFO - 
+Processing policy: 26.json
+2024-08-19 04:53:00,828 - INFO - Generating strings
+2024-08-19 04:53:03,218 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:53:03,219 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:53:03,507 - INFO - Running Quacky analysis
+2024-08-19 04:53:03,507 - INFO - Successfully processed policy: 26.json
+2024-08-19 04:53:03,508 - INFO - 
+Processing policy: 27.json
+2024-08-19 04:53:33,060 - INFO - Generating strings
+2024-08-19 04:53:36,299 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:53:36,300 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:57:35,357 - INFO - Running Quacky analysis
+2024-08-19 04:57:35,357 - INFO - Successfully processed policy: 27.json
+2024-08-19 04:57:35,357 - INFO - 
+Processing policy: 28.json
+2024-08-19 04:57:39,351 - INFO - Generating strings
+2024-08-19 04:57:42,661 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:57:42,662 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:57:53,509 - INFO - Running Quacky analysis
+2024-08-19 04:57:53,509 - INFO - Successfully processed policy: 28.json
+2024-08-19 04:57:53,510 - INFO - 
+Processing policy: 29.json
+2024-08-19 04:57:54,567 - INFO - Generating strings
+2024-08-19 04:57:57,284 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:57:57,285 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:57:57,794 - INFO - Running Quacky analysis
+2024-08-19 04:57:57,794 - INFO - Successfully processed policy: 29.json
+2024-08-19 04:57:57,795 - INFO - 
+Processing policy: 30.json
+2024-08-19 04:57:58,553 - INFO - Generating strings
+2024-08-19 04:58:01,330 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:58:01,331 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:58:01,522 - INFO - Running Quacky analysis
+2024-08-19 04:58:01,522 - INFO - Successfully processed policy: 30.json
+2024-08-19 04:58:01,522 - INFO - 
+Processing policy: 31.json
+2024-08-19 04:58:05,633 - INFO - Generating strings
+2024-08-19 04:58:11,373 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:58:11,375 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:58:18,359 - INFO - Running Quacky analysis
+2024-08-19 04:58:18,359 - INFO - Successfully processed policy: 31.json
+2024-08-19 04:58:18,359 - INFO - 
+Processing policy: 32.json
+2024-08-19 04:58:19,206 - INFO - Generating strings
+2024-08-19 04:58:21,276 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:58:21,278 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:58:21,534 - INFO - Running Quacky analysis
+2024-08-19 04:58:21,534 - INFO - Successfully processed policy: 32.json
+2024-08-19 04:58:21,534 - INFO - 
+Processing policy: 33.json
+2024-08-19 04:58:41,450 - INFO - Generating strings
+2024-08-19 04:58:45,486 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:58:45,487 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 04:59:24,867 - INFO - Running Quacky analysis
+2024-08-19 04:59:24,867 - INFO - Successfully processed policy: 33.json
+2024-08-19 04:59:24,867 - INFO - 
+Processing policy: 34.json
+2024-08-19 04:59:51,727 - INFO - Generating strings
+2024-08-19 04:59:54,926 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 04:59:54,928 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 05:03:47,215 - INFO - Running Quacky analysis
+2024-08-19 05:03:47,216 - INFO - Successfully processed policy: 34.json
+2024-08-19 05:03:47,216 - INFO - 
+Processing policy: 35.json
+2024-08-19 05:03:48,123 - INFO - Generating strings
+2024-08-19 05:03:50,423 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 05:03:50,424 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 05:03:50,863 - INFO - Running Quacky analysis
+2024-08-19 05:03:50,864 - INFO - Successfully processed policy: 35.json
+2024-08-19 05:03:50,864 - INFO - 
+Processing policy: 36.json
+2024-08-19 05:03:52,050 - INFO - Generating strings
+2024-08-19 05:03:54,328 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 05:03:54,329 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 05:03:54,978 - INFO - Running Quacky analysis
+2024-08-19 05:03:54,978 - INFO - Successfully processed policy: 36.json
+2024-08-19 05:03:54,978 - INFO - 
+Processing policy: 37.json
+2024-08-19 05:03:55,135 - INFO - Generating strings
+2024-08-19 05:03:57,918 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 05:03:57,919 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 05:03:58,121 - INFO - Running Quacky analysis
+2024-08-19 05:03:58,121 - INFO - Successfully processed policy: 37.json
+2024-08-19 05:03:58,121 - INFO - 
+Processing policy: 38.json
+2024-08-19 05:03:59,453 - INFO - Generating strings
+2024-08-19 05:04:02,634 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 05:04:02,635 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 05:04:03,680 - INFO - Running Quacky analysis
+2024-08-19 05:04:03,680 - INFO - Successfully processed policy: 38.json
+2024-08-19 05:04:03,681 - INFO - 
+Processing policy: 39.json
+2024-08-19 05:04:04,442 - INFO - Generating strings
+2024-08-19 05:04:06,291 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 05:04:06,292 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 05:04:06,479 - INFO - Running Quacky analysis
+2024-08-19 05:04:06,479 - INFO - Successfully processed policy: 39.json
+2024-08-19 05:04:06,479 - INFO - 
+Processing policy: 40.json
+2024-08-19 05:05:14,454 - INFO - Generating strings
+2024-08-19 05:05:16,744 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-08-19 05:05:16,745 - INFO - Regex generated and written to /home/adarsh/Documents/quacky/src/response.txt
+2024-08-19 05:07:44,939 - INFO - Running Quacky analysis
+2024-08-19 05:07:44,940 - INFO - Successfully processed policy: 40.json
+2024-08-19 05:07:44,943 - INFO - Fine-tuning dataset saved to: /home/adarsh/Documents/Exp-2/fine_tuning_dataset.jsonl
