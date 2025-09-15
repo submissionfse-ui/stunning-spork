@@ -5,18 +5,47 @@ FROM python:3.10-slim as builder
 RUN apt-get update && apt-get install -y \
     build-essential \
     git \
-    cmake \
     curl \
+    cmake \
+    autoconf \
+    automake \
+    libtool \
+    intltool \
+    pkg-config \
+    bison \
+    flex \
+    libreadline-dev \
+    python3 \
+    ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-# Build ABC solver from source
+# Semi-automated setup per UCSB ABC INSTALL.md
+# 1) Clone ABC first to access MONA patch file
 WORKDIR /tmp
-RUN git clone https://github.com/vlab-cs-ucsb/ABC.git && \
-    cd ABC && \
-    mkdir build && \
-    cd build && \
-    cmake .. && \
-    make -j$(nproc) && \
+RUN git clone --depth 1 --branch master https://github.com/vlab-cs-ucsb/ABC.git
+
+# 2) Build and install Glog (dependency)
+RUN git clone --depth 1 https://github.com/google/glog.git && \
+    cd glog && \
+    cmake -S . -B build -G "Unix Makefiles" && \
+    cmake --build build -j"$(nproc)" && \
+    cmake --install build
+
+# 3) Build and install MONA with ABC patch
+RUN git clone --depth 1 https://github.com/cs-au-dk/MONA.git && \
+    cd MONA && \
+    git apply /tmp/ABC/external/mona/mona_abc.patch && \
+    libtoolize && aclocal && automake --gnu --add-missing && autoreconf -ivf && \
+    ./configure && \
+    make -j"$(nproc)" all && \
+    make install && \
+    ldconfig
+
+# 4) Build and install ABC via autotools
+RUN cd /tmp/ABC && \
+    libtoolize && aclocal && automake --gnu --add-missing && autoreconf -ivf && \
+    ./configure && \
+    make -j1 && \
     make install
 
 # Final stage
@@ -28,11 +57,15 @@ RUN apt-get update && apt-get install -y \
     curl \
     git \
     python3-pip \
+    libreadline8 \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy ABC solver from builder
 COPY --from=builder /usr/local/bin/abc /usr/local/bin/abc
 COPY --from=builder /usr/local/lib/libabc* /usr/local/lib/
+COPY --from=builder /usr/local/lib/libglog* /usr/local/lib/
+COPY --from=builder /usr/local/lib/libmona* /usr/local/lib/
+RUN ldconfig
 
 # Set working directory for the app
 WORKDIR /app
