@@ -185,6 +185,234 @@ The `Dataset/` folder contains AWS IAM policies used in experiments. The `policy
 
 Due to the non-deterministic nature of language models, exact result replication may vary. However, the techniques and trends should be consistent. The Quacky tool in `artifacts/` includes necessary modifications for our experiments.
 
+## Prompts
+
+All LLM prompts used across experiments are documented below for reproducibility.
+
+### Experiment 1: Policy Explanation
+
+**Prompt (Policy → Natural Language Description):**
+```
+Please provide a clear, comprehensive natural language explanation of what this AWS IAM
+policy allows or denies in a manner that allows the reconstruction of this policy.
+Don't respond with your thought process at all. Make sure you only respond with the
+relevant explanation and nothing else. And make sure that the explanation is still in
+natural language otherwise it kinda defeats the purpose.
+
+Policy:
+{policy_content}
+```
+
+**Prompt (Description → Policy Reconstruction):**
+```
+Based on this explanation, generate a complete AWS IAM policy in JSON format.
+Only output valid JSON, no other text.
+
+Explanation:
+{description}
+```
+
+**Prompt (Z3 Models → Regex) — System:**
+```
+When asked to give a regex, provide ONLY the regex pattern itself. Do not include any
+explanations, markdown formatting, or additional text. The response should be just the
+regex pattern, nothing else. This is a highly critical application and it is imperative
+to get this right. Just give me the regex.
+```
+
+**Prompt (Z3 Models → Regex) — User:**
+```
+Give me a single regex that characterizes the pattern in the following set of Z3 model
+strings. The regex should capture the essential structure and be reasonably general but
+not overly permissive:
+
+{model_strings}
+
+Response:
+```
+
+### Experiment 2: Regex Synthesis from Strings
+
+**Developer Prompt:**
+```
+Output only the regex pattern (no quotes, no prose).
+
+Constraints (safe for DFA/ABC-style tooling):
+- Do NOT use ^ or $, \A \Z \z \G.
+- Do NOT use any (?...) constructs at all:
+  non-capturing (?: ), lookarounds (?=, ?!, ?<=, ?<!), inline flags (?i),
+  atomic (?>), conditionals, named groups, or backreferences \1..\9.
+- Do NOT use lazy quantifiers (*?, +?, ??, {m,n}?).
+- Match substrings; do not add boundaries.
+- Do NOT invent rules about '/', spaces, or extensions unless forced by examples.
+- Keep it specific; prefer bounded {m,n} and tight positive classes.
+```
+
+**User Prompt:**
+```
+Give a single regex that matches ALL of these strings (substring semantics).
+Return ONLY the regex pattern, nothing else:
+
+{strings}
+```
+
+### Experiment 4: Regex from Z3 Models (with Extended Thinking)
+
+**System Prompt:**
+```
+When asked to give a regex, provide ONLY the regex pattern itself. Do not include any
+explanations, markdown formatting, or additional text. The response should be just the
+regex pattern, nothing else. This is a highly critical application and it is imperative
+to get this right. Just give me the regex.
+```
+
+**User Prompt:**
+```
+Give me a single regex that accepts each string in the following set of strings.
+Make sure that you carefully go through each string before forming the regex.
+It should be close to optimal and not super permissive:
+
+{strings}
+
+Response:
+```
+
+### CPCA: Policy Comprehension Assessment
+
+**Prompt (Explanation Generation) — Used in Steps 1 and 4:**
+```
+Please provide a clear, comprehensive natural language explanation of what this AWS IAM
+policy allows or denies in a manner that allows the reconstruction of this policy.
+Don't respond with your thought process at all. Make sure you only respond with the
+relevant explanation and nothing else. And make sure that the explanation is still in
+natural language otherwise it kinda defeats the purpose.
+
+Policy:
+{policy_json}
+```
+
+**Prompt (Request Outcome Prediction) — Step 2:**
+```
+Given this AWS IAM policy:
+{policy_json}
+
+For each of the following requests, predict whether the policy would Allow or Deny access.
+Respond with exactly one word per line: either "Allow" or "Deny".
+
+Requests:
+1. Principal: {principal}, Action: {action}, Resource: {resource}
+...
+```
+
+**Prompt (Policy Reconstruction) — Step 3:**
+```
+Based on this explanation, generate a complete AWS IAM policy in JSON format.
+Only output valid JSON, no other text.
+
+Explanation:
+{original_explanation}
+```
+
+### Policy Summarizer: Regex Simplification
+
+**Prompt (DFA Regex → Simplified Regex) — Initial:**
+```
+You are an expert in regular expressions and cloud security policies.
+
+Given the following regex extracted from a DFA representing cloud resource access patterns:
+
+{regex}
+
+Please generate a SIMPLIFIED, human-readable equivalent regex that matches the same
+resources.
+
+Make it shorter and more readable while preserving the exact semantic meaning.
+
+IMPORTANT: Respond with ONLY the simplified regex on a single line. No explanation, no
+markdown, no backticks, no anchors (^ or $).
+Give the output as a raw regex. Do not assume this regex will be used in Python or any
+standard regex engine. Output a plain, raw regex pattern as would be used with grep or sed.
+```
+
+**Prompt (DFA Regex → Simplified Regex) — Retry with Feedback:**
+```
+You are an expert in regular expressions and cloud security policies.
+
+You previously generated a simplified regex, but it did NOT match the same resources as
+the original.
+
+ORIGINAL DFA REGEX:
+{regex}
+
+YOUR PREVIOUS ATTEMPT:
+{previous_regex}
+
+COMPARISON RESULTS:
+- Original regex matched: {baseline_count} resources
+- Your regex matched: {synthesized_count} resources
+- Jaccard Similarity: {jaccard_similarity} (should be close to 1.0)
+
+ANALYSIS:
+- If your regex matched FEWER resources, you were TOO RESTRICTIVE. Make it more permissive.
+- If your regex matched MORE resources, you were TOO PERMISSIVE. Make it more restrictive.
+
+Please generate a NEW simplified regex that is semantically equivalent to the original.
+
+IMPORTANT: Respond with ONLY the corrected regex on a single line. No explanation, no
+markdown, no backticks, no anchors (^ or $).
+Give the output as a raw regex. Do not assume this regex will be used in Python or any
+standard regex engine. Output a plain, raw regex pattern as would be used with grep or sed.
+```
+
+**Prompt (Samples → Regex) — Initial:**
+```
+You are an expert in regular expressions and cloud security policies.
+
+I will provide you with sample strings representing cloud resource paths. Generate a regex
+that matches these strings and similar ones.
+
+SAMPLE STRINGS:
+{samples}
+
+Analyze the samples and generate a regex pattern that matches all of them. Look for common
+patterns and variable parts.
+
+IMPORTANT: Respond with ONLY the regex on a single line. No explanation, no markdown, no
+backticks, no anchors (^ or $).
+Give the output as a raw regex. Do not assume this regex will be used in Python or any
+standard regex engine. Output a plain, raw regex pattern as would be used with grep or sed.
+```
+
+**Prompt (Samples → Regex) — Retry with Feedback:**
+```
+You are an expert in regular expressions and cloud security policies.
+
+You previously generated a regex from sample strings, but it did NOT match the same
+resources as the original.
+
+SAMPLE STRINGS:
+{samples}
+
+YOUR PREVIOUS ATTEMPT:
+{previous_regex}
+
+COMPARISON RESULTS:
+- Original regex matched: {baseline_count} resources
+- Your regex matched: {synthesized_count} resources
+- Jaccard Similarity: {jaccard_similarity} (should be close to 1.0)
+
+ANALYSIS:
+- If your regex matched FEWER resources, you were TOO RESTRICTIVE. Make it more permissive.
+- If your regex matched MORE resources, you were TOO PERMISSIVE. Make it more restrictive.
+
+Please generate a NEW regex that matches the same resources as the original.
+
+IMPORTANT: Respond with ONLY the corrected regex on a single line. No explanation, no
+markdown, no backticks, no anchors (^ or $).
+Give the output as a raw regex. Do not assume this regex will be used in Python or any
+standard regex engine. Output a plain, raw regex pattern as would be used with grep or sed.
+```
+
 ## Citation
 
 If you use this code or our findings in your research, please cite:
