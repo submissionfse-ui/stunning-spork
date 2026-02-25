@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/c3d4e5f6-a7b8-9012-cdef-123456789012/resourceGroups/rg-security",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/c3d4e5f6-a7b8-9012-cdef-123456789012/providers/Microsoft.Authorization/roleDefinitions/c8d4ff99-41c3-41a8-9f60-21dfdad59608",
+      "principalId": "665754a2-9480-4a33-9f9a-3d1c7e9dd5a6"
+    }
+  }
+]

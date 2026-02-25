@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/b2c3d4e5-f6a7-8901-bcde-f12345678901/resourceGroups/rg-shared-services",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/b2c3d4e5-f6a7-8901-bcde-f12345678901/providers/Microsoft.Authorization/roleDefinitions/dbaa88c4-0c30-4179-9fb3-46319faa6149",
+      "principalId": "2ca3ab87-6b22-4134-88ea-f93d9f9b87f5"
+    }
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/c3d4e5f6-a7b8-9012-cdef-123456789012/resourceGroups/rg-prod-eastus",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/c3d4e5f6-a7b8-9012-cdef-123456789012/providers/Microsoft.Authorization/roleDefinitions/ae349356-3a1b-4a5e-921d-050484c6347e",
+      "principalId": "49731b33-81aa-40ce-9a05-c8c491264b9f"
+    }
+  }
+]

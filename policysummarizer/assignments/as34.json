@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/a1b2c3d4-e5f6-7890-abcd-ef1234567890/resourceGroups/rg-dev-eastus/providers/Microsoft.CognitiveServices/accounts/cog-speech",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/a1b2c3d4-e5f6-7890-abcd-ef1234567890/providers/Microsoft.Authorization/roleDefinitions/a97b65f3-24c7-4388-baec-2e87135dc908",
+      "principalId": "94212d1b-7b60-4b26-a702-9f9c503f3ea2"
+    }
+  }
+]

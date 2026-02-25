@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/engineering/staging-api-11111",
+      "members": [
+        "data-analysts@contoso.com"
+      ],
+      "role": "roles/apigee.spaceContentEditor"
+    }
+  ]
+}

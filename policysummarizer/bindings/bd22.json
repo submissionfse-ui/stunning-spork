@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/platform",
+      "members": [
+        "bob.smith@contoso.com"
+      ],
+      "role": "roles/aiplatform.expressAdmin"
+    }
+  ]
+}

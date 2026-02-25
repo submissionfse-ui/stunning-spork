@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/a1b2c3d4-e5f6-7890-abcd-ef1234567890/resourceGroups/rg-dev-eastus/providers/Microsoft.Storage/storageAccounts/stdevlogs002",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/a1b2c3d4-e5f6-7890-abcd-ef1234567890/providers/Microsoft.Authorization/roleDefinitions/c6a89b2d-59bc-44d0-9896-0f6e12d7b80a",
+      "principalId": "7a4fc21c-9e01-4984-af0d-34b170c434a6"
+    }
+  }
+]

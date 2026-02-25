@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/production/data-warehouse-44444",
+      "members": [
+        "developers@contoso.com"
+      ],
+      "role": "roles/androidmanagement.user"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp",
+      "members": [
+        "devops-admins@contoso.com",
+        "alice.johnson@contoso.com"
+      ],
+      "role": "roles/apigee.runtimeAgent"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/platform/prod-web-12345",
+      "members": [
+        "github-actions@prod-web-12345.iam.gserviceaccount.com",
+        "viewer-group"
+      ],
+      "role": "roles/apigee.portalAdmin"
+    }
+  ]
+}

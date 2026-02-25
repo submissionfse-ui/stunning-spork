@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/platform/prod-web-12345",
+      "members": [
+        "grace.lee@contoso.com",
+        "carol.williams@contoso.com"
+      ],
+      "role": "roles/aiplatform.provisionedThroughputAdmin"
+    }
+  ]
+}

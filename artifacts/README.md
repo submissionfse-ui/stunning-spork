@@ -1,144 +1,150 @@
-# Quacky Pipeline Demo
+# Quacky
 
-An interactive web interface for demonstrating the Quacky policy analysis pipeline. This artifact provides a user-friendly way to generate, compare, and analyze AWS IAM access control policies using formal verification methods.
+Quacky quantitatively assesses the (relative) permissiveness of access control policies for the cloud. It
 
-## Features
+1. translates policies into constraint formulas that conform to the [SMT-LIB 2](http://smtlib.cs.uiowa.edu/language.shtml) standard, and
+2. counts models satisfying the formulas using the model counting constraint solver [ABC](https://github.com/vlab-cs-ucsb/ABC). 
 
-### ✅ Implemented
-- **Policy Generation from Natural Language** - Convert plain English descriptions to AWS IAM policies
-- **Policy Comparison** - Quantitative analysis of policy differences using SMT solving
-- **Interactive Web UI** - Streamlit-based interface for easy interaction
+Quacky supports access control policies written in the following policy languages:
 
-### 🚧 Coming Soon
-- **String Generation** - Generate example requests that distinguish policies
-- **Regex Synthesis** - Create patterns from example strings
-- **Validation & Analysis** - Comprehensive regex validation against policies
+1. [Amazon Web Services (AWS) Identity and Access Management (IAM)](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html)
+2. [Microsoft Azure](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview)
+3. [Google Cloud Platform (GCP)](https://cloud.google.com/iam)
 
-## Docker Deployment (Recommended for Reviewers)
+## Getting Quacky
+You can download the Quacky ICSE 2022 artifact from either of the following sources:
 
-For the easiest setup, use Docker:
+- [GitHub releases](https://github.com/vlab-cs-ucsb/quacky/releases)
+- Zenodo
 
-```bash
-# 1. Set up API keys
-cp .env.example .env
-# Edit .env and add your API keys
+The artifact is a .zip file containing the following:
 
-# 2. Build and run with Docker Compose
-docker-compose up -d
+- source code for Quacky (under `src`),
+- sample policies used in experiments (under `samples`),
+- experimental results (under `results`)
+- a copy of the accepted technical paper (under `docs`).
 
-# 3. Access the application
-# Open http://localhost:8501 in your browser
+*Note: To unzip the artifact, you can double click on the .zip file or use the `unzip` utility.*
+
+## Installing Quacky
+See `REQUIREMENTS` and `INSTALL`.
+
+## Using Quacky
+See `USAGE`.
+
+## Running Experiments
+The commands to get the raw data from each experiment are shown below. First,
+```
+cd src
 ```
 
-See [DOCKER_README.md](DOCKER_README.md) for detailed Docker instructions.
+### Quacky Benchmarking
+#### Table 1
+```
+# without transformation
+python3 runner_single_nolog.py -d ec2 -b 100 -c
+python3 runner_single_nolog.py -d iam -b 100 -c
+python3 runner_single_nolog.py -d s3 -b 100 -c
 
-## Quick Start (Local Installation)
-
-### Prerequisites
-- Python 3.8+
-- ABC solver installed and in PATH
-- Quacky tool (already included in the parent repository)
-
-### Installation
-
-1. **Install dependencies:**
-```bash
-cd artifacts
-pip install -r requirements.txt
+# with transformation
+python3 runner_single_nolog.py -d ec2 -b 100 -c -e
+python3 runner_single_nolog.py -d iam -b 100 -c -e
+python3 runner_single_nolog.py -d s3 -b 100 -c -e
 ```
 
-2. **Set up API keys:**
-```bash
-cp .env.example .env
-# Edit .env and add your API keys:
-# - ANTHROPIC_API_KEY for Claude
-# - OPENAI_API_KEY for GPT models
+#### Table 2
+```
+# without resource type constraints
+python3 runner_single_nolog.py -d ec2 -b 100
+python3 runner_single_nolog.py -d iam -b 100
+python3 runner_single_nolog.py -d s3 -b 100
+
+# with resource type constraints
+python3 runner_single_nolog.py -d ec2 -b 100 -c -e
+python3 runner_single_nolog.py -d iam -b 100 -c -e
+python3 runner_single_nolog.py -d s3 -b 100 -c -e
 ```
 
-3. **Run the application:**
-```bash
-streamlit run app.py
+### Relative Permissiveness Quantification
+#### Table 3
+```
+python3 runner_mutations_nolog.py -d ec2 -b 100 -t 600 -c -e
+python3 runner_mutations_nolog.py -d iam -b 100 -t 600 -c -e
+python3 runner_mutations_nolog.py -d s3 -b 100 -t 600 -c -e
 ```
 
-The app will open in your browser at `http://localhost:8501`
-
-## Usage Guide
-
-### Policy Generation
-1. Navigate to "Policy Generation" in the sidebar
-2. Enter a natural language description of your desired policy
-3. Click "Generate Policy" to create an AWS IAM policy
-4. Review and download the generated JSON
-
-### Policy Comparison
-1. Navigate to "Policy Comparison"
-2. Input two policies (paste JSON, upload files, or use generated)
-3. Set the analysis bound (higher = more accurate but slower)
-4. Click "Compare Policies" to run quantitative analysis
-5. Review metrics: satisfiability, solve time, request space size
-
-### Example Descriptions
-- "Allow all EC2 actions in us-west-2 region only"
-- "Grant read-only access to S3 buckets starting with 'public-'"
-- "Allow Lambda function management but deny deletion"
-- "Grant full DynamoDB access except for table deletion"
-
-## Architecture
-
+### Comparison with Enumerative Model Counting
+#### Figure 2
 ```
-artifacts/
-├── app.py                      # Main Streamlit application
-├── backend/
-│   ├── quacky_wrapper.py      # Python interface to quacky tool
-│   └── policy_generator.py    # LLM integration for NL→Policy
-├── examples/
-│   └── sample_policies/       # Example AWS IAM policies
-└── requirements.txt           # Python dependencies
+python3 runner_enumerative.py -d manual_enumerative -b 16 -t 1200
+python3 runner_enumerative.py -d manual_enumerative -b 17 -t 1200
+python3 runner_enumerative.py -d manual_enumerative -b 18 -t 1200
+python3 runner_enumerative.py -d manual_enumerative -b 19 -t 1200
+python3 runner_enumerative.py -d manual_enumerative -b 20 -t 1200
+python3 runner_enumerative.py -d manual_enumerative -b 21 -t 1200
 ```
 
-## How It Works
-
-1. **Natural Language → Policy**: Uses LLMs (Claude/GPT) to generate valid AWS IAM policies from descriptions
-2. **Policy → SMT Formula**: Quacky translates policies to SMT-LIB format
-3. **SMT Analysis**: ABC solver performs model counting to quantify policy space
-4. **Comparison**: Identifies requests allowed by one policy but not another
-5. **Metrics**: Provides precise measurements of policy permissiveness
-
-## Troubleshooting
-
-### "No LLM API key configured"
-- Ensure you have set either `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` in the `.env` file
-
-### "ABC solver not found"
-- Install ABC and ensure it's in your PATH
-- Check with: `which abc`
-
-### "Quacky not found"
-- The quacky tool should be at: `/home/ash/Desktop/VerifyingLLMGeneratedPolicies/CPCA/quacky/src/quacky.py`
-- Ensure the path in `backend/quacky_wrapper.py` is correct
-
-## Technical Details
-
-- **Frontend**: Streamlit for rapid prototyping and interactive UI
-- **Backend**: Python subprocess management for quacky integration
-- **Analysis**: SMT-LIB 2.0 format with ABC solver for model counting
-- **LLM Integration**: Anthropic Claude or OpenAI GPT for natural language processing
-
-## Contributing
-
-To extend this demo:
-1. Add new features in `app.py`
-2. Extend backend capabilities in `backend/`
-3. Add more example policies in `examples/`
-4. Update this README with new features
-
-## Citation
-
-If you use this tool in your research, please cite:
+#### Table 4
 ```
-[Quacky: Quantitative Analysis of Access Control Policies]
+# enumerative approach
+python3 runner_enumerative_z3_only.py -d ec2 -b 100 -t 600 -c -e
+python3 runner_enumerative_z3_only.py -d iam -b 100 -t 600 -c -e
+python3 runner_enumerative_z3_only.py -d s3 -b 100 -t 600 -c -e
+
+# quacky
+python3 runner_single_nolog.py -d ec2 -b 100 -c -e
+python3 runner_single_nolog.py -d iam -b 100 -c -e
+python3 runner_single_nolog.py -d s3 -b 100 -c -e
 ```
 
-## License
+### Microsoft Azure Policies
+#### Table 5
+```
+python3 quacky.py -rd ../samples/azure/role_definitions/compute.json \
+  -ra1 ../samples/azure/role_assignments/compute_user_login.json -b 150 -c
 
-This demo is part of the VerifyingLLMGeneratedPolicies research project.
+python3 quacky.py -rd ../samples/azure/role_definitions/compute.json \
+  -ra1 ../samples/azure/role_assignments/compute_admin_login.json -b 150 -c
+  
+python3 quacky.py -rd ../samples/azure/role_definitions/storage.json \
+  -ra1 ../samples/azure/role_assignments/storage_data_reader.json -b 150 -c
+
+python3 quacky.py -rd ../samples/azure/role_definitions/storage.json \
+  -ra1 ../samples/azure/role_assignments/storage_data_contributor.json -b 150 -c
+  
+python3 quacky.py -rd ../samples/azure/role_definitions/storage.json \
+  -ra1 ../samples/azure/role_assignments/storage_data_owner.json -b 150 -c
+```
+
+### Tips and Tricks
+Some experiments are long (they can take a couple hours). To facilitate these, we recommend the following:
+
+#### Run experiments in the background.
+```
+# note: this example command is the same as the one used for Table 3.
+python3 runner_mutations_nolog.py -d ec2 -b 100 -t 600 -c -e # run in foreground
+python3 runner_mutations_nolog.py -d ec2 -b 100 -t 600 -c -e > out.txt &  # redirect output and run in background
+python3 runner_mutations_nolog.py -d ec2 -b 100 -t 600 -c -e > out.txt &! # redirect output, run in background, and disown
+```
+*Note: to terminate a background process, do*
+```
+fg
+^C
+```
+*Note: to terminate a disowned process, do*
+```
+ps -e | grep "python3" # find the runner's PID
+ps -e | grep "abc"     # find ABC's PID, if applicable
+sudo kill -9 [PID]
+```
+
+#### Run experiments in bulk.
+```
+$ cat bulkrun.sh
+python3 runner_single.py -d ec2 -b 100 -c -e > ec2.txt # run for EC2
+python3 runner_single.py -d iam -b 100 -c -e > iam.txt # run for IAM
+python3 runner_single.py -d s3 -b 100 -c -e > s3.txt # run for S3
+
+$ sh bulkrun.sh &!
+```
+*Note: don't use for each loops!*

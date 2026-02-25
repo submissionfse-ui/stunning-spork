@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/security",
+      "members": [
+        "frank.miller@contoso.com"
+      ],
+      "role": "roles/anthosservicemesh.serviceAgent"
+    }
+  ]
+}

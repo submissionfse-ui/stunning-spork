@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/a1b2c3d4-e5f6-7890-abcd-ef1234567890/resourceGroups/rg-security/providers/Microsoft.Automation/automationAccounts/auto-runbooks-prod",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/a1b2c3d4-e5f6-7890-abcd-ef1234567890/providers/Microsoft.Authorization/roleDefinitions/4fe576fe-1146-4730-92eb-48519fa6bf9f",
+      "principalId": "8538b154-4b35-4388-8bce-f681e597d766"
+    }
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/production",
+      "members": [
+        "automation-principal"
+      ],
+      "role": "roles/aiplatform.extensionServiceAgent"
+    }
+  ]
+}

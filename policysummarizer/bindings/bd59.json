@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/production/shared-services-22222",
+      "members": [
+        "viewer-group",
+        "github-actions@prod-web-12345.iam.gserviceaccount.com"
+      ],
+      "role": "roles/alloydb.serviceAgent"
+    }
+  ]
+}

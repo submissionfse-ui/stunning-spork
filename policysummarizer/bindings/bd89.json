@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/data/staging-api-11111",
+      "members": [
+        "data-analysts@contoso.com"
+      ],
+      "role": "roles/apigee.developerAdmin"
+    }
+  ]
+}

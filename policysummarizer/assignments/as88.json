@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/a1b2c3d4-e5f6-7890-abcd-ef1234567890/resourceGroups/rg-prod-westus2/providers/Microsoft.Network/virtualNetworks/vnet-dmz",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/a1b2c3d4-e5f6-7890-abcd-ef1234567890/providers/Microsoft.Authorization/roleDefinitions/056cd41c-7e88-42e1-933e-88ba6a50c9c3",
+      "principalId": "bf474b08-b7ff-4884-83d6-98ec192f6622"
+    }
+  }
+]

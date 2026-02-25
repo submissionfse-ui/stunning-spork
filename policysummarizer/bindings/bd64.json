@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/engineering",
+      "members": [
+        "editor-user"
+      ],
+      "role": "roles/analyticshub.subscriber"
+    }
+  ]
+}

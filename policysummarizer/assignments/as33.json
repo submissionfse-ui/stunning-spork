@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/b2c3d4e5-f6a7-8901-bcde-f12345678901/resourceGroups/rg-staging-centralus",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/b2c3d4e5-f6a7-8901-bcde-f12345678901/providers/Microsoft.Authorization/roleDefinitions/d73bb868-a0df-4d4d-bd69-98a00b01fccb",
+      "principalId": "02ff0690-1b59-4a16-96cd-6d8fc311d426"
+    }
+  }
+]

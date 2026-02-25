@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/platform/data-warehouse-44444",
+      "members": [
+        "alice.johnson@contoso.com"
+      ],
+      "role": "roles/aiplatform.featurestoreResourceViewer"
+    }
+  ]
+}

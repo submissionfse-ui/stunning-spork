@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/security",
+      "members": [
+        "devops-admins@contoso.com"
+      ],
+      "role": "roles/anthos.serviceAgent"
+    }
+  ]
+}

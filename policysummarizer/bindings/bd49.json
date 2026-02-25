@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/platform/data-warehouse-44444",
+      "members": [
+        "frank.miller@contoso.com"
+      ],
+      "role": "roles/aiplatform.sessionUser"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/engineering",
+      "members": [
+        "gke-node-pool@prod-web-12345.iam.gserviceaccount.com"
+      ],
+      "role": "roles/apigee.apiAdmin"
+    }
+  ]
+}

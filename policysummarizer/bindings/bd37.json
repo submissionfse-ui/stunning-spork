@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/production/staging-api-11111",
+      "members": [
+        "grace.lee@contoso.com"
+      ],
+      "role": "roles/aiplatform.modelMonitoringServiceAgent"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/security",
+      "members": [
+        "ml-training-pipeline@ml-training-33333.iam.gserviceaccount.com",
+        "cloud-function-invoker@prod-web-12345.iam.gserviceaccount.com",
+        "frank.miller@contoso.com"
+      ],
+      "role": "roles/anthosidentityservice.serviceAgent"
+    }
+  ]
+}

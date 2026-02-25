@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/production/shared-services-22222",
+      "members": [
+        "github-actions@prod-web-12345.iam.gserviceaccount.com"
+      ],
+      "role": "roles/apigateway.viewer"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/b2c3d4e5-f6a7-8901-bcde-f12345678901/resourceGroups/rg-staging-centralus/providers/Microsoft.Automation/automationAccounts/auto-patching",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/b2c3d4e5-f6a7-8901-bcde-f12345678901/providers/Microsoft.Authorization/roleDefinitions/5fb5aef8-1081-4b8e-bb16-9d5d0385bab5",
+      "principalId": "43f74d38-9856-4d67-a594-b034127fb406"
+    }
+  }
+]

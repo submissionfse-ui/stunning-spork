@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/production/ml-training-33333",
+      "members": [
+        "gke-node-pool@prod-web-12345.iam.gserviceaccount.com"
+      ],
+      "role": "roles/aiplatform.notebookRuntimeUser"
+    }
+  ]
+}

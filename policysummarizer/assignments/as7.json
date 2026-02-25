@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/a1b2c3d4-e5f6-7890-abcd-ef1234567890/resourceGroups/rg-security/providers/Microsoft.ApiManagement/service/apim-partner-portal",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/a1b2c3d4-e5f6-7890-abcd-ef1234567890/providers/Microsoft.Authorization/roleDefinitions/e022efe7-f5ba-4159-bbe4-b44f577e9b61",
+      "principalId": "b70dc87d-ff5b-4eb0-b0ea-eb52b0fd85e4"
+    }
+  }
+]

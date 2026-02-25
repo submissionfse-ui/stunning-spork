@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/security/prod-web-12345",
+      "members": [
+        "github-actions@prod-web-12345.iam.gserviceaccount.com"
+      ],
+      "role": "roles/accesscontextmanager.vpcScTroubleshooterViewer"
+    }
+  ]
+}

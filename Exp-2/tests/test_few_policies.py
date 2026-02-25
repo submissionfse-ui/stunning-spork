@@ -21,9 +21,9 @@ load_dotenv('../.env')
 client = OpenAI()
 
 # Use the same paths from Exp-2.py
-policy_folder = "/home/ash/Desktop/VerifyingLLMGeneratedPolicies/Prev-Experiments/Verifying-LLMAccessControl/Dataset/Dataset_mutated"
-quacky_path = "/home/ash/Desktop/VerifyingLLMGeneratedPolicies/quacky/src/quacky.py"
-working_directory = "/home/ash/Desktop/VerifyingLLMGeneratedPolicies/quacky/src/"
+policy_folder = "./Dataset/Dataset_mutated"
+quacky_path = "./quacky/src/quacky.py"
+working_directory = "./quacky/src/"
 
 # Test just 3 policies
 test_policies = ["100.json", "101.json", "102.json"]

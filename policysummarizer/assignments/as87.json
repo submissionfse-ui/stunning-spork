@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/c3d4e5f6-a7b8-9012-cdef-123456789012",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/c3d4e5f6-a7b8-9012-cdef-123456789012/providers/Microsoft.Authorization/roleDefinitions/9b7fa17d-e63e-47b0-bb0a-15c516ac86ec",
+      "principalId": "e3d4d855-40de-4c41-987c-fef7e3f0ab32"
+    }
+  }
+]

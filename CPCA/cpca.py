@@ -735,9 +735,9 @@ def main():
     
     # Configuration - UPDATE THESE PATHS
     config = ExperimentConfig(
-        policy_dir=args.policy_dir or "/home/ash/Desktop/VerifyingLLMGeneratedPolicies/Prev-Experiments/Verifying-LLMAccessControl/Dataset",
-        quacky_base_path="/home/ash/Documents/Verifying-LLMAccessControl/Exp-1/quacky/src",
-        quacky_py_path="/home/ash/Documents/Verifying-LLMAccessControl/Exp-1/quacky/src/quacky.py",
+        policy_dir=args.policy_dir or "./Dataset",
+        quacky_base_path="./quacky/src",
+        quacky_py_path="./quacky/src/quacky.py",
         output_dir=args.output_dir,
         run_from_scratch=args.from_scratch
     )

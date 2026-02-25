@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/production/staging-api-11111",
+      "members": [
+        "ml-engineers@contoso.com"
+      ],
+      "role": "roles/accessapproval.configEditor"
+    }
+  ]
+}

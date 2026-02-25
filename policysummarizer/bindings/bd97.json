@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/engineering",
+      "members": [
+        "frank.miller@contoso.com",
+        "ml-training-pipeline@ml-training-33333.iam.gserviceaccount.com"
+      ],
+      "role": "roles/apigee.serviceAgent"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org",
+      "members": [
+        "admin-user"
+      ],
+      "role": "roles/apigee.environmentAdmin"
+    }
+  ]
+}

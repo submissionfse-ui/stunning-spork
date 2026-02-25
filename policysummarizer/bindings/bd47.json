@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/engineering",
+      "members": [
+        "david.brown@contoso.com"
+      ],
+      "role": "roles/aiplatform.serviceAgent"
+    }
+  ]
+}

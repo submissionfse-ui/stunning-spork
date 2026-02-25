@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/c3d4e5f6-a7b8-9012-cdef-123456789012/resourceGroups/rg-security/providers/Microsoft.Compute/virtualMachines/vm-prod-web01",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/c3d4e5f6-a7b8-9012-cdef-123456789012/providers/Microsoft.Authorization/roleDefinitions/c025889f-8102-4ebf-b32c-fc0c6f0c6bd9",
+      "principalId": "94212d1b-7b60-4b26-a702-9f9c503f3ea2"
+    }
+  }
+]

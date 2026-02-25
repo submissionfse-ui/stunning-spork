@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/data",
+      "members": [
+        "platform-engineers@contoso.com",
+        "alice.johnson@contoso.com"
+      ],
+      "role": "roles/anthossupport.serviceAgent"
+    }
+  ]
+}

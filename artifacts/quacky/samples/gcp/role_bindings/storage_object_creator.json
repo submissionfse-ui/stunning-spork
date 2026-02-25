@@ -1,9 +1,0 @@
-{
-    "bindings": [
-        {
-            "level": "/myorg/myfolder/myproject",
-            "members": ["foo"],
-            "role": "roles/storage.objectCreator"
-        }
-    ]
-}

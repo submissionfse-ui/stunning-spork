@@ -1,0 +1,13 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/engineering",
+      "members": [
+        "devops-admins@contoso.com",
+        "automation-principal",
+        "dataflow-worker@prod-web-12345.iam.gserviceaccount.com"
+      ],
+      "role": "roles/actions.Viewer"
+    }
+  ]
+}

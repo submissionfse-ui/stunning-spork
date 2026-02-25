@@ -1,0 +1,13 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/development/ml-training-33333",
+      "members": [
+        "ml-training-pipeline@ml-training-33333.iam.gserviceaccount.com",
+        "service-account-1",
+        "ml-engineers@contoso.com"
+      ],
+      "role": "roles/analyticshub.publisher"
+    }
+  ]
+}

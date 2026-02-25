@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/security/staging-api-11111",
+      "members": [
+        "viewer-group"
+      ],
+      "role": "roles/accessapproval.viewer"
+    }
+  ]
+}

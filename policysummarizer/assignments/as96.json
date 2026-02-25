@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/c3d4e5f6-a7b8-9012-cdef-123456789012/resourceGroups/rg-shared-services/providers/Microsoft.Storage/storageAccounts/stproddata001",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/c3d4e5f6-a7b8-9012-cdef-123456789012/providers/Microsoft.Authorization/roleDefinitions/8a0f0c08-91a1-4084-bc3d-661d67233fed",
+      "principalId": "94212d1b-7b60-4b26-a702-9f9c503f3ea2"
+    }
+  }
+]

@@ -1,126 +1,87 @@
-# Multi-stage build for Quacky Pipeline Demo
-FROM python:3.10-slim as builder
+# ============================================
+# Quacky Policy Summarizer — Docker Image
+# Multi-stage build: ABC solver + Python app
+# ============================================
 
-# Install build dependencies
+# --- Stage 1: Build ABC and dependencies from source ---
+FROM ubuntu:22.04 AS abc-builder
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# System deps for building ABC, Glog, and Mona
 RUN apt-get update && apt-get install -y \
-    build-essential \
-    git \
-    curl \
-    cmake \
-    autoconf \
-    automake \
-    libtool \
-    intltool \
-    pkg-config \
-    bison \
-    flex \
-    libreadline-dev \
-    python3 \
-    ca-certificates \
+    git g++ cmake make \
+    build-essential autoconf automake libtool intltool \
+    flex bison python3 \
     && rm -rf /var/lib/apt/lists/*
 
-# Semi-automated setup per UCSB ABC INSTALL.md
-# 1) Clone ABC first to access MONA patch file
-WORKDIR /tmp
-RUN git clone --depth 1 --branch master https://github.com/vlab-cs-ucsb/ABC.git
+# Build Glog
+RUN git clone --depth 1 https://github.com/google/glog.git /tmp/glog \
+    && cd /tmp/glog \
+    && cmake -S . -B build -G "Unix Makefiles" \
+    && cmake --build build \
+    && cmake --build build --target install \
+    && ldconfig
 
-# 2) Build and install Glog (dependency)
-RUN git clone --depth 1 https://github.com/google/glog.git && \
-    cd glog && \
-    cmake -S . -B build -G "Unix Makefiles" && \
-    cmake --build build -j"$(nproc)" && \
-    cmake --install build
+# Build Mona (with ABC patch)
+RUN git clone --recursive https://github.com/vlab-cs-ucsb/ABC.git /opt/ABC
+RUN git clone https://github.com/cs-au-dk/MONA.git /tmp/MONA \
+    && cd /tmp/MONA \
+    && git apply /opt/ABC/external/mona/mona_abc.patch \
+    && libtoolize && aclocal && automake --gnu --add-missing && autoreconf -ivf \
+    && ./configure && make all && make install && ldconfig
 
-# 3) Build and install MONA with ABC patch
-RUN git clone --depth 1 https://github.com/cs-au-dk/MONA.git && \
-    cd MONA && \
-    git apply /tmp/ABC/external/mona/mona_abc.patch && \
-    libtoolize && aclocal && automake --gnu --add-missing && autoreconf -ivf && \
-    ./configure && \
-    make -j"$(nproc)" all && \
-    make install && \
-    ldconfig
+# Build ABC
+RUN cd /opt/ABC \
+    && ./autogen.sh \
+    && ./configure \
+    && make all \
+    && make install \
+    && ldconfig
 
-# 4) Build and install ABC via autotools
-RUN cd /tmp/ABC && \
-    libtoolize && aclocal && automake --gnu --add-missing && autoreconf -ivf && \
-    ./configure && \
-    make -j1 && \
-    make install
+# --- Stage 2: Runtime image ---
+FROM python:3.12-slim
 
-# Final stage
-FROM python:3.10-slim
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED=1
 
-# Install runtime dependencies
+# Install minimal runtime libs needed by ABC
 RUN apt-get update && apt-get install -y \
-    libgomp1 \
-    curl \
-    git \
-    python3-pip \
-    libreadline8 \
+    libstdc++6 libgcc-s1 \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy ABC solver from builder
-COPY --from=builder /usr/local/bin/abc /usr/local/bin/abc
-COPY --from=builder /usr/local/lib/libabc* /usr/local/lib/
-COPY --from=builder /usr/local/lib/libglog* /usr/local/lib/
-COPY --from=builder /usr/local/lib/libmona* /usr/local/lib/
+# Copy ABC binary and all shared libraries from builder
+COPY --from=abc-builder /usr/local/bin/abc /usr/local/bin/abc
+COPY --from=abc-builder /usr/local/lib/libabc.so* /usr/local/lib/
+COPY --from=abc-builder /usr/local/lib/libglog.so* /usr/local/lib/
+COPY --from=abc-builder /usr/local/lib/libmonadfa.so* /usr/local/lib/
+COPY --from=abc-builder /usr/local/lib/libmonabdd.so* /usr/local/lib/
+COPY --from=abc-builder /usr/local/lib/libmonamem.so* /usr/local/lib/
 RUN ldconfig
 
-# Set working directory for the app
+# Set up working directory
 WORKDIR /app
 
-# Copy the modified quacky directory (with your customizations) to the expected location
-RUN mkdir -p /opt/VerifyingLLMGeneratedPolicies/CPCA
-COPY quacky /opt/VerifyingLLMGeneratedPolicies/CPCA/quacky
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt \
+    && pip install --no-cache-dir \
+       fastapi==0.129.0 \
+       uvicorn==0.41.0 \
+       anthropic==0.82.0 \
+       python-dotenv==1.2.1
 
-# Copy artifacts directory contents
-COPY . /app/
+# Copy application code
+COPY src/ ./src/
+COPY web/ ./web/
+COPY samples/ ./samples/
 
-# Install Python dependencies for Quacky
-RUN pip install --no-cache-dir \
-    cel-python \
-    selenium \
-    sentence-transformers \
-    anthropic \
-    openai \
-    google-generativeai \
-    scikit-learn \
-    pandas \
-    numpy \
-    python-dotenv \
-    streamlit \
-    requests
+# Expose port
+EXPOSE 8000
 
-# Install any additional requirements from requirements.txt if it exists
-COPY requirements.txt* ./
-RUN if [ -f requirements.txt ]; then pip install --no-cache-dir -r requirements.txt; fi
+# Provide the Anthropic API key at runtime:
+#   docker run -e ANTHROPIC_API_KEY=sk-... -p 8000:8000 quacky
+# Or via an env file:
+#   docker run --env-file .env -p 8000:8000 quacky
 
-# Create necessary directories
-RUN mkdir -p /app/temp /app/results
-
-# Create a wrapper script to set up environment
-RUN echo '#!/bin/bash\n\
-# Set up environment for Docker\n\
-export QUACKY_PATH="/opt/VerifyingLLMGeneratedPolicies/CPCA/quacky/src/quacky.py"\n\
-export QUACKY_DOCKER=1\n\
-# Start the application\n\
-exec streamlit run app.py --server.address=0.0.0.0 --server.port=8501 --server.headless=true --browser.gatherUsageStats=false' > /app/start.sh && \
-    chmod +x /app/start.sh
-
-# Expose Streamlit port
-EXPOSE 8501
-
-# Health check
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health || exit 1
-
-# Set environment variables
-ENV PYTHONUNBUFFERED=1
-ENV STREAMLIT_SERVER_HEADLESS=true
-ENV STREAMLIT_SERVER_PORT=8501
-ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
-ENV QUACKY_DOCKER=1
-ENV QUACKY_PATH=/opt/VerifyingLLMGeneratedPolicies/CPCA/quacky/src/quacky.py
-
-# Run the application
-CMD ["/app/start.sh"]
+CMD ["python", "web/app.py"]

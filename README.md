@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the code and experimental artifacts for verifying LLM-synthesized access control policies. Our research explores techniques for generating, analyzing, and verifying access control policies using large language models, with a focus on AWS IAM policies and formal verification methods.
+This repository contains the code and experimental artifacts for verifying LLM-synthesized access control policies. Our research explores techniques for generating, analyzing, and verifying access control policies using large language models, with a focus on AWS IAM policies, Azure role definitions, and GCP IAM bindings using formal verification methods.
 
 ## Research Approach
 
@@ -11,74 +11,81 @@ Our methodology combines:
 - **Formal Verification**: Using SMT solvers and model counting for policy analysis
 - **Quantitative Analysis**: Measuring policy permissiveness and semantic equivalence
 - **Pattern Synthesis**: Generating regex patterns from example strings
+- **Policy Summarization**: Producing human-readable summaries of complex AWS, Azure, and GCP policies via regex simplification and resource path verification
 
 We evaluate state-of-the-art language models on their ability to:
 1. Generate syntactically and semantically correct policies
 2. Comprehend and explain existing policies
 3. Synthesize patterns that capture policy resource constraints
 4. Maintain semantic equivalence across transformations
+5. Summarize complex policy behaviors into concise, verifiable descriptions
 
 ## Repository Structure
 
 ```
-Verifying-LLMAccessControl/
-├── artifacts/              # Interactive Streamlit demo with Docker deployment
-│   ├── app.py             # Main web interface
-│   ├── backend/           # Core logic and wrappers
-│   ├── quacky/            # Modified Quacky tool (bundled)
-│   ├── docker-compose.yml # Easy deployment configuration
-│   └── REVIEWER_QUICKSTART.md
+├── artifacts/              # Quacky tool + interactive web demo with Docker deployment
+│   ├── Dockerfile         # Multi-stage Docker build (ABC solver + FastAPI app)
+│   ├── deploy.sh          # Deployment helper script
+│   ├── src/               # Quacky source code (with modifications)
+│   ├── web/               # FastAPI web interface
+│   │   └── app.py         # SSE-based policy analysis web app
+│   ├── samples/           # Sample AWS IAM policies
+│   ├── iam-dataset/       # IAM dataset for experiments
+│   └── tutorial.md        # Step-by-step usage tutorial
+│
+├── policysummarizer/       # Policy Summarization Experiments (NEW)
+│   ├── regex_summarizer.py # Core regex-based policy summarizer (AWS/Azure/GCP)
+│   ├── mutation_comparator.py # Policy mutation comparison
+│   ├── assignment_generator.py # GCP IAM assignment generation
+│   ├── binding_generator.py    # GCP IAM binding generation
+│   ├── flatten_role.py    # Azure role definition flattening
+│   ├── assignments/       # Generated GCP IAM assignments
+│   ├── bindings/          # Generated GCP IAM bindings
+│   ├── results/           # Summarization results
+│   └── results_report.ipynb # Analysis and figures
 │
 ├── CPCA/                   # Core Policy Comprehension Assessment framework
-│   ├── cpca.py            # Main experiment runner
-│   ├── quacky/            # Quantitative analysis tool
-│   └── experiment_results/ # Experimental data
+│   └── cpca.py            # Main experiment runner
 │
 ├── Exp-1/                  # Policy Generation and Comparison
-│   ├── Exp-1.py           # Dual policy analysis
-│   └── README.md          # Experiment details
+│   └── Exp-1.py           # Dual policy analysis
 │
-├── Exp-2/                  # Resource Summarization 
+├── Exp-2/                  # Resource Summarization
 │   ├── Exp-2.py           # Regex synthesis from policies
-│   ├── results/           # Evaluation metrics
 │   └── tests/             # Test cases
 │
 ├── Exp-3/                  # Factors Affecting Summarization
-│   ├── Exp-3.py           # Multi-string analysis
-│   └── multi-string.csv   # Results data
+│   └── Exp-3.py           # Multi-string analysis
 │
 ├── Exp-4-Zelkova/         # Zelkova-based Verification
 │   ├── Exp-4-Zelkova.py   # Z3 model enumeration
-│   ├── z3_model_enum.py   # SMT solving utilities
-│   └── results/           # Verification outputs
-│
-├── regex/                  # Regex Generation Results
-│   └── *.csv              # Pattern synthesis evaluations
+│   └── z3_model_enum.py   # SMT solving utilities
 │
 ├── Dataset/               # AWS IAM Policy Dataset
 ├── Fine-tuning/           # Model Fine-tuning Experiments
-└── Simplification-Exp/    # Policy Simplification Studies
+├── Simplification-Exp/    # Policy Simplification Studies
+└── regex/                 # Regex Generation Results
 ```
 
 ## Quick Start with Docker (Recommended)
 
-The `artifacts/` directory contains a fully dockerized demo:
+The `artifacts/` directory contains a fully dockerized deployment of the Quacky tool and web interface:
 
 ```bash
 cd artifacts/
-cp .env.example .env  # Add your API keys
-docker-compose up -d
-# Access at http://localhost:8501
+docker build -t quacky .
+docker run -e ANTHROPIC_API_KEY=your_key -p 8000:8000 quacky
+# Access at http://localhost:8000
 ```
 
-See [artifacts/DOCKER_README.md](artifacts/DOCKER_README.md) for detailed instructions.
+The Docker image builds the ABC solver from source and bundles all dependencies. Build time is approximately 5–10 minutes on first run.
 
 ## Prerequisites for Local Setup
 
 - Python 3.8+
 - API keys for LLM services (at least one required)
 - ABC (Automata-Based model Counter)
-- Quacky (Quantitative Access Control Permissiveness Analyzer)
+- Quacky (included in `artifacts/` with modifications)
 
 ## Installation
 
@@ -104,7 +111,7 @@ See [artifacts/DOCKER_README.md](artifacts/DOCKER_README.md) for detailed instru
    cmake .. && make && sudo make install
    ```
 
-5. Install Quacky (included in CPCA directory with modifications)
+5. Quacky is included in the `artifacts/` directory with necessary modifications.
 
 ## Experiments
 
@@ -143,31 +150,40 @@ cd CPCA/
 python cpca.py --models <model_name> --policy-dir <path> --output-dir results
 ```
 
+### Policy Summarizer (New)
+Regex-based policy summarization with LLM-aided simplification and resource path verification. Supports AWS IAM policies, Azure role definitions/assignments, and GCP IAM role bindings.
+```bash
+cd policysummarizer/
+python regex_summarizer.py
+```
+
 ## Key Features
 
 - **Policy Generation**: Natural language to AWS IAM policy conversion
 - **Quantitative Comparison**: SMT-based policy space analysis
 - **Pattern Synthesis**: Regex generation from example strings
 - **Formal Verification**: Using ABC and Z3 solvers
-- **Interactive Demo**: Web-based interface for all features
+- **Policy Summarization**: Automated regex simplification and resource verification
+- **Interactive Demo**: Web-based interface with streaming results
+- **Multi-Cloud Support**: AWS IAM, Azure RBAC, and GCP IAM policy analysis
 
 ## Technical Components
 
 - **Quacky**: Translates policies to SMT-LIB format for model counting
 - **ABC Solver**: Performs efficient model counting for policy analysis
 - **Z3 Theorem Prover**: Used for formal verification in Exp-4
-- **Streamlit Interface**: User-friendly web demo in artifacts/
+- **FastAPI Interface**: Web-based demo with SSE streaming in `artifacts/web/`
 
 ## Data
 
-The `Dataset/` folder contains AWS IAM policies used in experiments. To use your own:
-1. Place policies in JSON format in the Dataset folder
+The `Dataset/` folder contains AWS IAM policies used in experiments. The `policysummarizer/` directory contains GCP IAM assignments/bindings and supports Azure role definitions. To use your own:
+1. Place policies in JSON format in the appropriate folder
 2. Update experiment scripts to point to your data
 3. Results will be saved in CSV format in respective experiment folders
 
 ## Replication Notes
 
-Due to the non-deterministic nature of language models, exact result replication may vary. However, the techniques and trends should be consistent. The bundled Quacky in `artifacts/` and `CPCA/` includes necessary modifications for our experiments.
+Due to the non-deterministic nature of language models, exact result replication may vary. However, the techniques and trends should be consistent. The Quacky tool in `artifacts/` includes necessary modifications for our experiments.
 
 ## Citation
 

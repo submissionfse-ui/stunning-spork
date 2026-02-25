@@ -19,7 +19,7 @@ TEST_POLICIES = [
     "102.json"
 ]
 
-DATASET_PATH = "/home/ash/Desktop/VerifyingLLMGeneratedPolicies/Prev-Experiments/Verifying-LLMAccessControl/Dataset/Dataset_mutated"
+DATASET_PATH = "./Dataset/Dataset_mutated"
 
 def test_single_policy(policy_file):
     """Test a single policy using Exp-2."""
@@ -47,8 +47,8 @@ load_dotenv('../.env')
 client = OpenAI()
 
 policy_path = "{policy_path}"
-quacky_path = "/home/ash/Desktop/VerifyingLLMGeneratedPolicies/CPCA/quacky/src/quacky.py"
-working_directory = "/home/ash/Desktop/VerifyingLLMGeneratedPolicies/CPCA/quacky/src/"
+quacky_path = "./quacky/src/quacky.py"
+working_directory = "./quacky/src/"
 
 # Read policy
 with open(policy_path, 'r') as f:
@@ -71,7 +71,7 @@ command = [
 try:
     result = subprocess.run(command, cwd=working_directory, capture_output=True, text=True, timeout=30)
     
-    response_file = "/home/ash/Desktop/VerifyingLLMGeneratedPolicies/CPCA/quacky/src/response.txt"
+    response_file = "./quacky/src/response.txt"
     if os.path.exists(response_file):
         with open(response_file, 'r') as f:
             response = f.read()

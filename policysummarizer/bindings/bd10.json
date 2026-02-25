@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/platform/dev-analytics-67890",
+      "members": [
+        "ml-training-pipeline@ml-training-33333.iam.gserviceaccount.com"
+      ],
+      "role": "roles/actions.Admin"
+    }
+  ]
+}

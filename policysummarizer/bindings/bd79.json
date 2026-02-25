@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/platform/prod-web-12345",
+      "members": [
+        "emma.davis@contoso.com",
+        "service-account-1"
+      ],
+      "role": "roles/apigee.admin"
+    }
+  ]
+}

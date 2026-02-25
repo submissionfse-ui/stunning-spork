@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/security",
+      "members": [
+        "emma.davis@contoso.com"
+      ],
+      "role": "roles/apigee.analyticsViewer"
+    }
+  ]
+}

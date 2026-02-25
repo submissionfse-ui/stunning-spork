@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/development/staging-api-11111",
+      "members": [
+        "alice.johnson@contoso.com"
+      ],
+      "role": "roles/aiplatform.viewer"
+    }
+  ]
+}

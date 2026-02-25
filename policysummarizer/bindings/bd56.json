@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/development/ml-training-33333",
+      "members": [
+        "terraform-automation@shared-services-22222.iam.gserviceaccount.com"
+      ],
+      "role": "roles/alloydb.admin"
+    }
+  ]
+}

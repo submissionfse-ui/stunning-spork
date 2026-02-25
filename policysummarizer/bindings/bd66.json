@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org",
+      "members": [
+        "emma.davis@contoso.com"
+      ],
+      "role": "roles/analyticshub.viewer"
+    }
+  ]
+}

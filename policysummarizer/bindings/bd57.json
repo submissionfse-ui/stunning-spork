@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/platform/prod-web-12345",
+      "members": [
+        "viewer-group"
+      ],
+      "role": "roles/alloydb.client"
+    }
+  ]
+}

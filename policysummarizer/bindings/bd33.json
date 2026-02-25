@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/engineering/dev-analytics-67890",
+      "members": [
+        "developers@contoso.com"
+      ],
+      "role": "roles/aiplatform.memoryEditor"
+    }
+  ]
+}

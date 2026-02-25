@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/a1b2c3d4-e5f6-7890-abcd-ef1234567890/resourceGroups/rg-staging-centralus/providers/Microsoft.Compute/virtualMachines/vm-batch-worker",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/a1b2c3d4-e5f6-7890-abcd-ef1234567890/providers/Microsoft.Authorization/roleDefinitions/76283e04-6283-4c54-8f91-bcf1374a3c64",
+      "principalId": "ac05b251-8809-4817-9de5-06cc14be5ec9"
+    }
+  }
+]

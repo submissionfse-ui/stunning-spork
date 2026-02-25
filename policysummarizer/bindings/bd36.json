@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/engineering/data-warehouse-44444",
+      "members": [
+        "automation-principal"
+      ],
+      "role": "roles/aiplatform.migrator"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/development/prod-web-12345",
+      "members": [
+        "service-account-1",
+        "ml-engineers@contoso.com"
+      ],
+      "role": "roles/aiplatform.expressUser"
+    }
+  ]
+}

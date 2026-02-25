@@ -1,0 +1,13 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/data/data-warehouse-44444",
+      "members": [
+        "bigquery-scheduler@data-warehouse-44444.iam.gserviceaccount.com",
+        "github-actions@prod-web-12345.iam.gserviceaccount.com",
+        "gke-node-pool@prod-web-12345.iam.gserviceaccount.com"
+      ],
+      "role": "roles/aiplatform.rapidevalServiceAgent"
+    }
+  ]
+}

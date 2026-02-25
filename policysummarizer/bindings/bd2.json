@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/data/shared-services-22222",
+      "members": [
+        "terraform-automation@shared-services-22222.iam.gserviceaccount.com"
+      ],
+      "role": "roles/accessapproval.invalidator"
+    }
+  ]
+}

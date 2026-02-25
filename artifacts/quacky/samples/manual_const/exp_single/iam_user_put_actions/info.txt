@@ -1,3 +1,0 @@
-expected count: 2 
-This policy allows any IAM user action starting with "Put"
-on the resource.

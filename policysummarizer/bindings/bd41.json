@@ -1,0 +1,13 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/platform/staging-api-11111",
+      "members": [
+        "bob.smith@contoso.com",
+        "automation-principal",
+        "developers@contoso.com"
+      ],
+      "role": "roles/aiplatform.notebookServiceAgent"
+    }
+  ]
+}

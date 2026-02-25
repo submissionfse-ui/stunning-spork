@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/platform/data-warehouse-44444",
+      "members": [
+        "platform-engineers@contoso.com"
+      ],
+      "role": "roles/aiplatform.featurestoreDataViewer"
+    }
+  ]
+}

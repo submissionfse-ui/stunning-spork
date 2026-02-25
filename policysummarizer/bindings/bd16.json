@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/platform",
+      "members": [
+        "data-analysts@contoso.com"
+      ],
+      "role": "roles/aiplatform.batchPredictionServiceAgent"
+    }
+  ]
+}

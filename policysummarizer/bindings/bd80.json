@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org",
+      "members": [
+        "developers@contoso.com",
+        "ml-engineers@contoso.com"
+      ],
+      "role": "roles/apigee.analyticsAgent"
+    }
+  ]
+}

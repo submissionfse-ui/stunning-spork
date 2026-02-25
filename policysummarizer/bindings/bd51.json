@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/engineering",
+      "members": [
+        "ml-engineers@contoso.com",
+        "emma.davis@contoso.com"
+      ],
+      "role": "roles/aiplatform.telemetryServiceAgent"
+    }
+  ]
+}

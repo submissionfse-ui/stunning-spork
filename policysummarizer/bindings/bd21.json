@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/engineering/shared-services-22222",
+      "members": [
+        "david.brown@contoso.com"
+      ],
+      "role": "roles/aiplatform.entityTypeOwner"
+    }
+  ]
+}

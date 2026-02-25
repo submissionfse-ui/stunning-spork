@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/security/shared-services-22222",
+      "members": [
+        "data-analysts@contoso.com"
+      ],
+      "role": "roles/apigee.apiReader"
+    }
+  ]
+}

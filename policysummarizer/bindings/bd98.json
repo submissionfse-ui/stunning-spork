@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/platform/ml-training-33333",
+      "members": [
+        "backup-service@shared-services-22222.iam.gserviceaccount.com",
+        "ml-engineers@contoso.com"
+      ],
+      "role": "roles/apigee.spaceConsoleUser"
+    }
+  ]
+}

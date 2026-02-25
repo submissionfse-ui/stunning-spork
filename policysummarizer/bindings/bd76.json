@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/security/staging-api-11111",
+      "members": [
+        "developers@contoso.com"
+      ],
+      "role": "roles/apigateway.serviceAgent"
+    }
+  ]
+}

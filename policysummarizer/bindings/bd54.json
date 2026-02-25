@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/development/data-warehouse-44444",
+      "members": [
+        "automation-principal"
+      ],
+      "role": "roles/aiplatform.user"
+    }
+  ]
+}

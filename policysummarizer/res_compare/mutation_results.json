@@ -1,0 +1,50 @@
+[
+  {
+    "policy_name": "ec2/ec2_allow_ebs_volume_owners/policy",
+    "mutant_file": "0_0.json",
+    "p1_not_p2_sat": "unsat",
+    "p1_not_p2_regex_dfa": null,
+    "p1_not_p2_regex_llm": null,
+    "p1_not_p2_jaccard": null,
+    "not_p1_p2_sat": "unsat",
+    "not_p1_p2_regex_dfa": null,
+    "not_p1_p2_regex_llm": null,
+    "not_p1_p2_jaccard": null,
+    "p1_not_p2_llm_attempts": 0,
+    "not_p1_p2_llm_attempts": 0,
+    "verdict": "Policy 1 and Policy 2 are equivalent.",
+    "error": null
+  },
+  {
+    "policy_name": "ec2/ec2_allow_ebs_volume_owners/policy",
+    "mutant_file": "0_1.json",
+    "p1_not_p2_sat": "unsat",
+    "p1_not_p2_regex_dfa": null,
+    "p1_not_p2_regex_llm": null,
+    "p1_not_p2_jaccard": null,
+    "not_p1_p2_sat": "unsat",
+    "not_p1_p2_regex_dfa": null,
+    "not_p1_p2_regex_llm": null,
+    "not_p1_p2_jaccard": null,
+    "p1_not_p2_llm_attempts": 0,
+    "not_p1_p2_llm_attempts": 0,
+    "verdict": "Policy 1 and Policy 2 are equivalent.",
+    "error": null
+  },
+  {
+    "policy_name": "ec2/ec2_allow_ebs_volume_owners/policy",
+    "mutant_file": "0_2.json",
+    "p1_not_p2_sat": "unsat",
+    "p1_not_p2_regex_dfa": null,
+    "p1_not_p2_regex_llm": null,
+    "p1_not_p2_jaccard": null,
+    "not_p1_p2_sat": "sat",
+    "not_p1_p2_regex_dfa": "arn:aws:ec2:((\\~|\\||\\}|x|z|y|\\{|p|t|r|v|q|u|s|w|`|h|d|l|b|j|f|n|a|i|e|m|c|k|g|o|\\@|P|H|X|D|T|L|\\\\|B|R|J|Z|F|V|N|^|A|Q|I|Y|E|U|M|\\]|C|S|K|\\[|G|W|O|_|<|>|=|\\?|;|8|9|0|4|2|6|1|5|3|7| |\\(|$|,|\\\"|\\*|\\&|\\.|!|\\)|%|-|\\#|\\+|/|'))*:((:((:|v(:|o(:|l(:|u(:|m(:|e:)))))))*(v(o(l(u(m(e(\\~|\\||\\}|x|z|y|\\{|p|t|r|v|q|u|s|w|`|h|d|l|b|j|f|n|a|i|e|m|c|k|g|o|\\@|P|H|X|D|T|L|\\\\|B|R|J|Z|F|V|N|^|A|Q|I|Y|E|U|M|\\]|C|S|K|\\[|G|W|O|_|<|>|=|\\?|;|8|9|0|4|2|6|1|5|3|7|\\.|,|-|\\(|\\*|\\)|\\+| |$|\\\"|\\&|!|%|'|\\#)|\\~|\\||\\}|x|z|y|\\{|p|t|r|v|q|u|s|w|h|l|j|n|i|m|k|o|f|g|d|`|b|a|c|\\@|P|H|X|D|T|L|\\\\|B|R|J|Z|F|V|N|^|A|Q|I|Y|E|U|M|\\]|C|S|K|\\[|G|W|O|_|<|>|=|\\?|;|8|9|0|4|2|6|1|5|3|7| |\\(|$|,|\\\"|\\*|\\&|\\.|!|\\)|%|-|\\#|\\+|/|')|\\~|\\||\\}|x|z|y|\\{|p|t|r|v|q|u|s|w|n|o|l|h|j|i|k|`|d|b|f|a|e|c|g|\\@|P|H|X|D|T|L|\\\\|B|R|J|Z|F|V|N|^|A|Q|I|Y|E|U|M|\\]|C|S|K|\\[|G|W|O|_|<|>|=|\\?|;|8|9|0|4|2|6|1|5|3|7| |\\(|$|,|\\\"|\\*|\\&|\\.|!|\\)|%|-|\\#|\\+|/|')|\\~|\\||\\}|x|z|y|\\{|v|w|t|p|r|q|s|`|h|d|l|b|j|f|n|a|i|e|m|c|k|g|o|\\@|P|H|X|D|T|L|\\\\|B|R|J|Z|F|V|N|^|A|Q|I|Y|E|U|M|\\]|C|S|K|\\[|G|W|O|_|<|>|=|\\?|;|8|9|0|4|2|6|1|5|3|7| |\\(|$|,|\\\"|\\*|\\&|\\.|!|\\)|%|-|\\#|\\+|/|')|\\~|\\||\\}|x|z|y|\\{|p|t|r|v|q|u|s|w|n|o|m|h|j|i|k|`|d|b|f|a|e|c|g|\\@|P|H|X|D|T|L|\\\\|B|R|J|Z|F|V|N|^|A|Q|I|Y|E|U|M|\\]|C|S|K|\\[|G|W|O|_|<|>|=|\\?|;|8|9|0|4|2|6|1|5|3|7| |\\(|$|,|\\\"|\\*|\\&|\\.|!|\\)|%|-|\\#|\\+|/|')|\\~|\\||\\}|x|z|y|\\{|p|t|r|v|q|u|s|w|n|l|m|h|j|i|k|`|d|b|f|a|e|c|g|\\@|P|H|X|D|T|L|\\\\|B|R|J|Z|F|V|N|^|A|Q|I|Y|E|U|M|\\]|C|S|K|\\[|G|W|O|_|<|>|=|\\?|;|8|9|0|4|2|6|1|5|3|7| |\\(|$|,|\\\"|\\*|\\&|\\.|!|\\)|%|-|\\#|\\+|/|')|\\~|\\||\\}|x|z|y|\\{|w|t|u|p|r|q|s|`|h|d|l|b|j|f|n|a|i|e|m|c|k|g|o|\\@|P|H|X|D|T|L|\\\\|B|R|J|Z|F|V|N|^|A|Q|I|Y|E|U|M|\\]|C|S|K|\\[|G|W|O|_|<|>|=|\\?|;|8|9|0|4|2|6|1|5|3|7| |\\(|$|,|\\\"|\\*|\\&|\\.|!|\\)|%|-|\\#|\\+|/|')|\\~|\\||\\}|x|z|y|\\{|p|t|r|v|q|u|s|w|`|h|d|l|b|j|f|n|a|i|e|m|c|k|g|o|\\@|P|H|X|D|T|L|\\\\|B|R|J|Z|F|V|N|^|A|Q|I|Y|E|U|M|\\]|C|S|K|\\[|G|W|O|_|<|>|=|\\?|;|8|9|0|4|2|6|1|5|3|7| |\\(|$|,|\\\"|\\*|\\&|\\.|!|\\)|%|-|\\#|\\+|/|'))*:((:|v(:|o(:|l(:|u(:|m(:|e:)))))))*volume/((\\~|\\||\\}|x|z|y|\\{|p|t|r|v|q|u|s|w|`|h|d|l|b|j|f|n|a|i|e|m|c|k|g|o|\\@|P|H|X|D|T|L|\\\\|B|R|J|Z|F|V|N|^|A|Q|I|Y|E|U|M|\\]|C|S|K|\\[|G|W|O|_| |0|\\(|8|$|4|,|<|\\\"|2|\\*|:|\\&|6|\\.|>|!|1|\\)|9|%|5|-|=|\\#|3|\\+|;|'|7|\\?|/))*",
+    "not_p1_p2_regex_llm": "arn:aws:ec2:[^:]*:(:|v:|vo:|vol:|volu:|volum:|volume:)*volume[^:]*:(:|v:|vo:|vol:|volu:|volum:|volume:)*volume/.*",
+    "not_p1_p2_jaccard": "0.00",
+    "p1_not_p2_llm_attempts": 0,
+    "not_p1_p2_llm_attempts": 5,
+    "verdict": "Policy 1 is less permissive than Policy 2.",
+    "error": null
+  }
+]

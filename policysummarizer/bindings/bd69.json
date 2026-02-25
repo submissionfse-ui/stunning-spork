@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/platform/dev-analytics-67890",
+      "members": [
+        "bigquery-scheduler@data-warehouse-44444.iam.gserviceaccount.com"
+      ],
+      "role": "roles/anthosaudit.serviceAgent"
+    }
+  ]
+}

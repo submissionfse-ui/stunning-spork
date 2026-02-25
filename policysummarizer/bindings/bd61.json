@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/platform/prod-web-12345",
+      "members": [
+        "terraform-automation@shared-services-22222.iam.gserviceaccount.com"
+      ],
+      "role": "roles/analyticshub.admin"
+    }
+  ]
+}

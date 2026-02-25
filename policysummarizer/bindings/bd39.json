@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/platform",
+      "members": [
+        "automation-principal"
+      ],
+      "role": "roles/aiplatform.notebookRuntimeAdmin"
+    }
+  ]
+}

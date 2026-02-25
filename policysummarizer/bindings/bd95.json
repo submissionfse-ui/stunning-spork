@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/development/staging-api-11111",
+      "members": [
+        "github-actions@prod-web-12345.iam.gserviceaccount.com"
+      ],
+      "role": "roles/apigee.securityAdmin"
+    }
+  ]
+}

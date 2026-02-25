@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/platform",
+      "members": [
+        "backup-service@shared-services-22222.iam.gserviceaccount.com"
+      ],
+      "role": "roles/apigee.securityViewer"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/development/ml-training-33333",
+      "members": [
+        "ml-engineers@contoso.com"
+      ],
+      "role": "roles/alloydb.databaseUser"
+    }
+  ]
+}

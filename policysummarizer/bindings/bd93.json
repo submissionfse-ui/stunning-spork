@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/production/staging-api-11111",
+      "members": [
+        "bigquery-scheduler@data-warehouse-44444.iam.gserviceaccount.com"
+      ],
+      "role": "roles/apigee.readOnlyAdmin"
+    }
+  ]
+}

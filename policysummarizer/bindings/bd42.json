@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/security/prod-web-12345",
+      "members": [
+        "gke-node-pool@prod-web-12345.iam.gserviceaccount.com"
+      ],
+      "role": "roles/aiplatform.onlinePredictionServiceAgent"
+    }
+  ]
+}

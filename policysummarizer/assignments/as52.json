@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/c3d4e5f6-a7b8-9012-cdef-123456789012/resourceGroups/rg-prod-westus2",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/c3d4e5f6-a7b8-9012-cdef-123456789012/providers/Microsoft.Authorization/roleDefinitions/b60367af-1334-4454-b71e-769d9a4f83d9",
+      "principalId": "bf474b08-b7ff-4884-83d6-98ec192f6622"
+    }
+  }
+]

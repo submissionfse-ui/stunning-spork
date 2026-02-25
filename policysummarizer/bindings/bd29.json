@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/engineering/shared-services-22222",
+      "members": [
+        "carol.williams@contoso.com"
+      ],
+      "role": "roles/aiplatform.featurestoreInstanceCreator"
+    }
+  ]
+}

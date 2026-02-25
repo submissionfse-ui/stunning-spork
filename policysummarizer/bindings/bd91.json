@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org",
+      "members": [
+        "viewer-group"
+      ],
+      "role": "roles/apigee.monetizationAdmin"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/a1b2c3d4-e5f6-7890-abcd-ef1234567890/resourceGroups/rg-staging-centralus/providers/Microsoft.Blockchain/blockchainMembers/bcm-prod-consortium",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/a1b2c3d4-e5f6-7890-abcd-ef1234567890/providers/Microsoft.Authorization/roleDefinitions/31a002a1-acaf-453e-8a5b-297c9ca1ea24",
+      "principalId": "665754a2-9480-4a33-9f9a-3d1c7e9dd5a6"
+    }
+  }
+]

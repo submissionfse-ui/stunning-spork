@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/platform",
+      "members": [
+        "admin-user"
+      ],
+      "role": "roles/aiplatform.sessionEditor"
+    }
+  ]
+}

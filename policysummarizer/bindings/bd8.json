@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/security",
+      "members": [
+        "viewer-group"
+      ],
+      "role": "roles/accesscontextmanager.policyReader"
+    }
+  ]
+}

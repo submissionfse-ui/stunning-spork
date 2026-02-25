@@ -1,3 +1,0 @@
-This policy allows all s3 actions on any resource except a given bucket and its contents. 
-
-source = https://forums.aws.amazon.com/thread.jspa?threadID=291104&tstart=675

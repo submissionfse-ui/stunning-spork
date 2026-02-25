@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/development",
+      "members": [
+        "service-account-1"
+      ],
+      "role": "roles/aiplatform.admin"
+    }
+  ]
+}

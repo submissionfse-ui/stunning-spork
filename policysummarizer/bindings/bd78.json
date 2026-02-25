@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/development/staging-api-11111",
+      "members": [
+        "platform-engineers@contoso.com"
+      ],
+      "role": "roles/apigateway_management.serviceAgent"
+    }
+  ]
+}

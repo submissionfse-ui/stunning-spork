@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/data",
+      "members": [
+        "backup-service@shared-services-22222.iam.gserviceaccount.com"
+      ],
+      "role": "roles/anthosconfigmanagement.serviceAgent"
+    }
+  ]
+}

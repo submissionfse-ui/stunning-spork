@@ -1,0 +1,13 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/platform/staging-api-11111",
+      "members": [
+        "carol.williams@contoso.com",
+        "alice.johnson@contoso.com",
+        "backup-service@shared-services-22222.iam.gserviceaccount.com"
+      ],
+      "role": "roles/aiplatform.tensorboardWebAppUser"
+    }
+  ]
+}

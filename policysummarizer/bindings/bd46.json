@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/platform/prod-web-12345",
+      "members": [
+        "gke-node-pool@prod-web-12345.iam.gserviceaccount.com",
+        "service-account-1"
+      ],
+      "role": "roles/aiplatform.reasoningEngineServiceAgent"
+    }
+  ]
+}

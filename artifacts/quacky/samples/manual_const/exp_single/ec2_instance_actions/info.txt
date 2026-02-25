@@ -1,2 +1,0 @@
-expected count: 19
-This policy allows all ec2 instance actions on the resource. 

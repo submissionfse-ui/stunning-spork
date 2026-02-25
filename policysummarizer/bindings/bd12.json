@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/data/ml-training-33333",
+      "members": [
+        "viewer-group",
+        "terraform-automation@shared-services-22222.iam.gserviceaccount.com"
+      ],
+      "role": "roles/advisorynotifications.admin"
+    }
+  ]
+}

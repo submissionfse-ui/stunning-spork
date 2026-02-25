@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/development/staging-api-11111",
+      "members": [
+        "data-analysts@contoso.com"
+      ],
+      "role": "roles/accesscontextmanager.gcpAccessAdmin"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/development",
+      "members": [
+        "alice.johnson@contoso.com"
+      ],
+      "role": "roles/accesscontextmanager.policyAdmin"
+    }
+  ]
+}

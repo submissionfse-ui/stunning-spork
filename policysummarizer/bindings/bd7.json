@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/data/staging-api-11111",
+      "members": [
+        "carol.williams@contoso.com"
+      ],
+      "role": "roles/accesscontextmanager.policyEditor"
+    }
+  ]
+}

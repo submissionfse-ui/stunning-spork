@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/engineering/prod-web-12345",
+      "members": [
+        "frank.miller@contoso.com"
+      ],
+      "role": "roles/accessapproval.approver"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp",
+      "members": [
+        "carol.williams@contoso.com"
+      ],
+      "role": "roles/aiplatform.sessionViewer"
+    }
+  ]
+}

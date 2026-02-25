@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/production/prod-web-12345",
+      "members": [
+        "dataflow-worker@prod-web-12345.iam.gserviceaccount.com",
+        "devops-admins@contoso.com"
+      ],
+      "role": "roles/apigee.apiAdminV2"
+    }
+  ]
+}

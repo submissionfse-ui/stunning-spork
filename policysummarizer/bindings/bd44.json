@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg",
+      "members": [
+        "admin-user"
+      ],
+      "role": "roles/aiplatform.ragServiceAgent"
+    }
+  ]
+}

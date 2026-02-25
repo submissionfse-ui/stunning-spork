@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/myorg/security",
+      "members": [
+        "security-team@contoso.com"
+      ],
+      "role": "roles/apigee.deploymentInvoker"
+    }
+  ]
+}

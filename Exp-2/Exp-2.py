@@ -19,14 +19,14 @@ client = OpenAI()
 model_name = "gpt-5"
 
 
-policy_folder = "/home/ash/Desktop/VerifyingLLMGeneratedPolicies/Prev-Experiments/Verifying-LLMAccessControl/Dataset/Dataset_mutated"
-quacky_base_path = "/home/ash/Desktop/VerifyingLLMGeneratedPolicies/quacky/src"
-quacky_path = "/home/ash/Desktop/VerifyingLLMGeneratedPolicies/quacky/src/quacky.py"
-working_directory = "/home/ash/Desktop/VerifyingLLMGeneratedPolicies/quacky/src/"
-response_file_path = "/home/ash/Desktop/VerifyingLLMGeneratedPolicies/quacky/src/response.txt"
+policy_folder = "./Dataset/Dataset_mutated"
+quacky_base_path = "./quacky/src"
+quacky_path = "./quacky/src/quacky.py"
+working_directory = "./quacky/src/"
+response_file_path = "./quacky/src/response.txt"
 result_table_path = "Exp-2/multi-string.csv"
-generated_policy_path = "/home/ash/Desktop/VerifyingLLMGeneratedPolicies/quacky/src/gen_pol.json"
-p1_not_p2_models_path = "/home/ash/Desktop/VerifyingLLMGeneratedPolicies/quacky/src/P1_not_P2.models"
+generated_policy_path = "./quacky/src/gen_pol.json"
+p1_not_p2_models_path = "./quacky/src/P1_not_P2.models"
 progress_file_path = "Exp-2/progress.json"
 
 def read_policy_file(file_path):

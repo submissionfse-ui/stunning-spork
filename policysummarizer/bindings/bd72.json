@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/security",
+      "members": [
+        "viewer-group",
+        "service-account-1"
+      ],
+      "role": "roles/anthospolicycontroller.serviceAgent"
+    }
+  ]
+}

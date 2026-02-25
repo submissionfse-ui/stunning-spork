@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp",
+      "members": [
+        "dataflow-worker@prod-web-12345.iam.gserviceaccount.com",
+        "cloud-function-invoker@prod-web-12345.iam.gserviceaccount.com"
+      ],
+      "role": "roles/apigee.apiReaderV2"
+    }
+  ]
+}

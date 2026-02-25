@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/production",
+      "members": [
+        "terraform-automation@shared-services-22222.iam.gserviceaccount.com",
+        "ml-training-pipeline@ml-training-33333.iam.gserviceaccount.com"
+      ],
+      "role": "roles/analyticshub.listingAdmin"
+    }
+  ]
+}

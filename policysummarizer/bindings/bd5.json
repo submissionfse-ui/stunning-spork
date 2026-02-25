@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/development",
+      "members": [
+        "bob.smith@contoso.com"
+      ],
+      "role": "roles/accesscontextmanager.gcpAccessReader"
+    }
+  ]
+}

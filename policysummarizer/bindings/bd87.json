@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/data",
+      "members": [
+        "security-team@contoso.com"
+      ],
+      "role": "roles/apigee.apimServiceExtensionServiceAgent"
+    }
+  ]
+}

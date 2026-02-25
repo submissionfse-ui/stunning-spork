@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/b2c3d4e5-f6a7-8901-bcde-f12345678901/resourceGroups/rg-dev-eastus/providers/Microsoft.Insights/components/appi-prod-monitoring",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/b2c3d4e5-f6a7-8901-bcde-f12345678901/providers/Microsoft.Authorization/roleDefinitions/e3d13bf0-dd5a-482e-ba6b-9b8433878d10",
+      "principalId": "52930a1f-dfc3-4f36-a07b-ffa621d52975"
+    }
+  }
+]

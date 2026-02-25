@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/engineering/shared-services-22222",
+      "members": [
+        "bob.smith@contoso.com",
+        "ml-training-pipeline@ml-training-33333.iam.gserviceaccount.com"
+      ],
+      "role": "roles/analyticshub.subscriptionOwner"
+    }
+  ]
+}

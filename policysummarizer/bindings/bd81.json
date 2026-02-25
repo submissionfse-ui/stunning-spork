@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp",
+      "members": [
+        "grace.lee@contoso.com"
+      ],
+      "role": "roles/apigee.analyticsEditor"
+    }
+  ]
+}

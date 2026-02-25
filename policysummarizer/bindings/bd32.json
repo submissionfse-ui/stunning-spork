@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/security",
+      "members": [
+        "devops-admins@contoso.com"
+      ],
+      "role": "roles/aiplatform.featurestoreUser"
+    }
+  ]
+}

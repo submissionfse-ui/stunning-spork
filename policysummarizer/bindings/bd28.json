@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/data/dev-analytics-67890",
+      "members": [
+        "editor-user"
+      ],
+      "role": "roles/aiplatform.featurestoreDataWriter"
+    }
+  ]
+}

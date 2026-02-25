@@ -1,0 +1,9 @@
+[
+  {
+    "scope": "/subscriptions/a1b2c3d4-e5f6-7890-abcd-ef1234567890/resourceGroups/rg-shared-services/providers/Microsoft.DataLakeAnalytics/accounts/dla-prod-analytics",
+    "properties": {
+      "roleDefinitionId": "/subscriptions/a1b2c3d4-e5f6-7890-abcd-ef1234567890/providers/Microsoft.Authorization/roleDefinitions/47b7735b-770e-4598-a7da-8b91488b4c88",
+      "principalId": "6c490373-540a-4fa8-996c-169486497ecb"
+    }
+  }
+]

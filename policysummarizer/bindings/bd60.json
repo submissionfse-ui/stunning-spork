@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "level": "/contoso-org/platform/shared-services-22222",
+      "members": [
+        "emma.davis@contoso.com",
+        "developers@contoso.com"
+      ],
+      "role": "roles/alloydb.viewer"
+    }
+  ]
+}

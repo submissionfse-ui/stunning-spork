@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "level": "/acme-corp/production",
+      "members": [
+        "terraform-automation@shared-services-22222.iam.gserviceaccount.com"
+      ],
+      "role": "roles/aiplatform.memoryUser"
+    }
+  ]
+}

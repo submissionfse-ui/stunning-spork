@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Summarizer — Cloud Policy Analysis Tool</title>
+    <meta name="description"
+        content="Analyze cloud IAM policies with automated action-bucket summarization, regex simplification, and verified resource paths.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Code+Pro:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css?v=8">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <h1 class="header-title">Policy Summarizer</h1>
+            <p class="header-subtitle">Cloud Policy Analysis Tool</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Input Panel -->
+        <section class="panel panel-input">
+            <h2 class="panel-title">Input Policy</h2>
+
+            <!-- File Upload -->
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📄</div>
+                <p class="upload-text">Drag & drop a policy JSON file here</p>
+                <p class="upload-or">or</p>
+                <label class="upload-btn" for="fileInput">Choose File</label>
+                <input type="file" id="fileInput" accept=".json" hidden>
+            </div>
+
+            <!-- Policy Editor -->
+            <div class="cell cell-input">
+                <div class="cell-label">Policy JSON</div>
+                <textarea id="policyInput" class="code-editor" spellcheck="false" placeholder='{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowS3Access",
+      "Effect": "Allow",
+      "Action": ["s3:*"],
+      "Resource": "*"
+    }
+  ]
+}'></textarea>
+            </div>
+
+            <!-- Options -->
+            <div class="options-row">
+                <div class="option-group">
+                    <label class="option-label" for="boundInput">String Bound</label>
+                    <input type="number" id="boundInput" class="option-input" value="100" min="1" max="1000">
+                </div>
+                <div class="option-group">
+                    <label class="option-label">
+                        <span class="toggle-wrap">
+                            <input type="checkbox" id="explainToggle" checked>
+                            <span class="toggle-slider"></span>
+                        </span>
+                        LLM Explanation
+                    </label>
+                </div>
+            </div>
+
+            <!-- Analyze Button -->
+            <button id="analyzeBtn" class="analyze-btn" onclick="analyzePolicy()">
+                <span class="btn-text">Analyze Policy</span>
+                <span class="btn-spinner" hidden>⟳</span>
+            </button>
+
+            <!-- Error -->
+            <div id="errorMsg" class="error-msg" hidden></div>
+        </section>
+
+        <!-- Results Panel -->
+        <section class="panel panel-results">
+            <h2 class="panel-title">Results</h2>
+
+            <!-- Placeholder -->
+            <div id="resultsPlaceholder" class="results-placeholder">
+                <div class="placeholder-icon">🔍</div>
+                <p>Paste a policy and click <strong>Analyze</strong> to see results</p>
+            </div>
+
+            <!-- Loading -->
+            <div id="resultsLoading" class="results-loading" hidden>
+                <div class="loading-spinner"></div>
+                <p id="loadingText">Analyzing policy...</p>
+            </div>
+
+            <!-- Results Container -->
+            <div id="resultsContainer" hidden></div>
+
+            <!-- Summary -->
+            <div id="resultsSummary" class="results-summary" hidden></div>
+        </section>
+    </main>
+
+    <script src="/static/app.js?v=8"></script>
+</body>
+
+</html>
